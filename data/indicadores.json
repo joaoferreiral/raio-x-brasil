@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-10-26T02:57:06.917Z",
+  "atualizadoEm": "2026-10-26T03:05:17.717Z",
   "itens": [
     {
       "id": "ipca12m",
@@ -20,7 +20,7 @@
         "tipo": "sgs",
         "serie": 13522
       },
-      "verificadoEm": "25/10/2026"
+      "verificadoEm": "26/10/2026"
     },
     {
       "id": "selic",
@@ -28,7 +28,7 @@
       "unidade": "% ao ano",
       "casas": 2,
       "valor": 13.75,
-      "referencia": "25/10/2026",
+      "referencia": "26/10/2026",
       "valorAntes": 13.75,
       "referenciaAntes": "31/12/2022",
       "melhorQuando": "neutro",
@@ -41,7 +41,7 @@
         "tipo": "sgs",
         "serie": 432
       },
-      "verificadoEm": "25/10/2026"
+      "verificadoEm": "26/10/2026"
     },
     {
       "id": "desemprego",
@@ -61,7 +61,7 @@
       "auto": {
         "tipo": "sidra-desemprego"
       },
-      "verificadoEm": "25/10/2026"
+      "verificadoEm": "26/10/2026"
     },
     {
       "id": "dbgg",
@@ -82,7 +82,7 @@
         "tipo": "sgs",
         "serie": 13762
       },
-      "verificadoEm": "25/10/2026"
+      "verificadoEm": "26/10/2026"
     },
     {
       "id": "dolar",
@@ -104,7 +104,7 @@
         "tipo": "sgs",
         "serie": 1
       },
-      "verificadoEm": "25/10/2026"
+      "verificadoEm": "26/10/2026"
     },
     {
       "id": "salario",
@@ -127,7 +127,7 @@
         "tipo": "sgs",
         "serie": 1619
       },
-      "verificadoEm": "25/10/2026"
+      "verificadoEm": "26/10/2026"
     },
     {
       "id": "carga",
