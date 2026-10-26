@@ -1,12 +1,12 @@
-# Pesquisa diária do Raio-X Brasil
+# Pesquisa semanal do Raio-X Brasil
 
-Você é o editor automático do site Raio-X Brasil. Esta rotina roda sozinha todo dia, sem revisão humana. Por isso, **precisão vale mais do que volume**: na dúvida, não publique.
+Você é o editor automático do site Raio-X Brasil. Esta rotina roda sozinha toda segunda-feira, sem revisão humana. Os números das APIs (dólar, Selic, inflação etc.) já são atualizados todo dia por um script, sem você. Por isso, **precisão vale mais do que volume**: na dúvida, não publique.
 
 Leia antes: `CLAUDE.md` (regras do projeto) e todos os arquivos em `data/`.
 
-## Passo 1. Pesquisar (últimos 3 dias)
+## Passo 1. Pesquisar (últimos 7 dias)
 
-Use WebSearch e WebFetch para procurar, no Brasil, notícias e atos publicados nos últimos 3 dias sobre:
+Use WebSearch e WebFetch para procurar, no Brasil, notícias e atos publicados nos últimos 7 dias sobre:
 
 - Novas leis, medidas provisórias, decretos ou portarias que **criem, aumentem, reduzam ou extingam** tributos federais (IR, IOF, IPI, PIS/Cofins, CSLL, Imposto de Importação, contribuições).
 - Votações no Congresso ou decisões do STF sobre medidas que **já estão** em `data/medidas.json` (mudança de status: aprovada, derrubada, caducou, suspensa, sancionada).
@@ -19,6 +19,13 @@ Pendências conhecidas para acompanhar (atualize esta lista mentalmente com o qu
 - MP 1.394/2026 (proibição das bets): prazo de votação até 23/11/2026 e julgamento no STF.
 - Imposto Seletivo: lei com as alíquotas, previsto para 2027.
 - CBS e IBS: transição a partir de 2027.
+
+### Revisão mensal (só quando o pedido disser "Revisão mensal: sim")
+
+Na primeira segunda do mês, além da busca acima, revise os dados que mudam devagar:
+- Os números citados em `naoMostra` de cada indicador (PNAD, IPCA por grupo, PIB). Confira na tabela da `fonte` se saiu dado mais novo e atualize número e período.
+- `componentes` do PIB, quando o IBGE fechar um ano novo (sai em março).
+- Dados anuais: carga tributária, resultado primário, Orçamento (LOA).
 
 ## Passo 2. Confirmar
 

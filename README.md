@@ -2,7 +2,7 @@
 
 O Brasil em números, sem complicação. Impostos, gastos do governo e indicadores da economia explicados em linguagem simples, atualizados todo dia com dados oficiais.
 
-Custo: **zero**, fora o domínio. GitHub Pages e GitHub Actions são gratuitos em repositório público, as APIs do Banco Central e do IBGE são abertas e a pesquisa diária usa a sua assinatura do Claude.
+Custo: **zero**, fora o domínio. GitHub Pages e GitHub Actions são gratuitos em repositório público, as APIs do Banco Central e do IBGE são abertas e a pesquisa semanal usa a sua assinatura do Claude.
 
 ## Colocar no ar (uma vez só, ~10 minutos)
 
@@ -48,7 +48,7 @@ O site fica em `https://SEU-USUARIO.github.io/raio-x-brasil/`.
 Todo dia às 05:00 (Recife), o workflow `.github/workflows/atualizar.yml` faz três coisas:
 
 1. **Indicadores:** busca inflação, Selic, dólar, desemprego, dívida e salário mínimo nas APIs do Banco Central e do IBGE. Se uma fonte falhar, mantém o último valor.
-2. **Pesquisa diária:** roda o Claude Code com as regras de `.claude/pesquisa-diaria.md`. Ele procura novas leis, MPs e decretos sobre impostos, confirma em fonte oficial e atualiza `data/`. Se o resultado não passar na validação, as mudanças são descartadas.
+2. **Pesquisa semanal (só às segundas):** roda o Claude Code com as regras de `.claude/pesquisa-semanal.md`. Ele procura novas leis, MPs e decretos sobre impostos, confirma em fonte oficial e atualiza `data/`. Se o resultado não passar na validação, as mudanças são descartadas.
 3. **Publicação:** valida tudo e publica no GitHub Pages.
 
 Para acompanhar: `gh run list` ou a aba **Actions** do repositório. Para rodar só os números, sem a pesquisa: `gh workflow run atualizar.yml -f pular_pesquisa=true`.

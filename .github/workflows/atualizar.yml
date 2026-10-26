@@ -2,11 +2,11 @@ name: Atualizar e publicar
 
 on:
   schedule:
-    - cron: '0 8 * * *'   # todo dia às 05:00 no horário de Recife (UTC-3)
+    - cron: '0 8 * * *'   # todo dia às 05:00 no horário de Recife (UTC-3); a pesquisa com o Claude só roda às segundas
   workflow_dispatch:
     inputs:
       pular_pesquisa:
-        description: 'Pular a pesquisa diária com o Claude (só atualizar números)'
+        description: 'Pular a pesquisa com o Claude (só atualizar números)'
         type: boolean
         default: false
   push:
@@ -48,7 +48,7 @@ jobs:
           git push origin HEAD:main
 
   pesquisa:
-    name: Pesquisa diária (Claude)
+    name: Pesquisa semanal (Claude)
     needs: indicadores
     if: github.event_name != 'push' && inputs.pular_pesquisa != true
     runs-on: ubuntu-latest
@@ -64,16 +64,22 @@ jobs:
           node-version: 20
       - name: Data de hoje
         id: hoje
-        run: echo "data=$(TZ=America/Recife date +%F)" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "data=$(TZ=America/Recife date +%F)" >> "$GITHUB_OUTPUT"
+          # Pelo agendamento, pesquisa só às segundas. Rodando à mão, pesquisa sempre.
+          dia=$(TZ=America/Recife date +%u)
+          [ "${{ github.event_name }}" != schedule ] || [ "$dia" = 1 ] && echo "roda=true" >> "$GITHUB_OUTPUT" || true
+          # Primeira segunda do mês: revisão mensal dos dados que mudam devagar.
+          [ "$dia" = 1 ] && [ "$(TZ=America/Recife date +%-d)" -le 7 ] && echo "mensal=sim" >> "$GITHUB_OUTPUT" || true
       - name: Pesquisar novidades e atualizar os dados
-        if: env.TEM_TOKEN == 'true'
+        if: env.TEM_TOKEN == 'true' && steps.hoje.outputs.roda == 'true'
         continue-on-error: true
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
-            Hoje é ${{ steps.hoje.outputs.data }}. Leia e siga à risca as instruções do arquivo .claude/pesquisa-diaria.md.
+            Hoje é ${{ steps.hoje.outputs.data }}. Revisão mensal: ${{ steps.hoje.outputs.mensal || 'não' }}. Leia e siga à risca as instruções do arquivo .claude/pesquisa-semanal.md.
           claude_args: >-
             --max-turns 60
             --allowedTools "WebSearch,WebFetch,Read,Edit,Write,Glob,Grep,Bash(node scripts/validar.mjs)"
@@ -91,8 +97,8 @@ jobs:
             echo "Pesquisa sem novidades hoje." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          { echo "### Mudanças da pesquisa diária"; echo '```'; git diff --cached --stat; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
-          git commit -m "dados: pesquisa diária ${{ steps.hoje.outputs.data }}"
+          { echo "### Mudanças da pesquisa semanal"; echo '```'; git diff --cached --stat; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          git commit -m "dados: pesquisa semanal ${{ steps.hoje.outputs.data }}"
           git pull --rebase origin main
           git push origin HEAD:main
 

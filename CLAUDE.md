@@ -13,8 +13,8 @@ Site público que explica, em linguagem simples, o estado do Brasil: impostos, g
 - `data/contexto.json`: governo atual, base de comparação (dez/2022) e avisos.
 - `data/changelog.json`: últimas atualizações mostradas no site.
 - `scripts/validar.mjs`: valida todos os JSON. Roda antes de qualquer publicação.
-- `.github/workflows/atualizar.yml`: todo dia às 05:00 (Recife) atualiza indicadores, roda a pesquisa com o Claude e publica no GitHub Pages.
-- `.claude/pesquisa-diaria.md`: instruções da pesquisa diária automática.
+- `.github/workflows/atualizar.yml`: todo dia às 05:00 (Recife) atualiza indicadores e publica no GitHub Pages. Às segundas, também roda a pesquisa com o Claude.
+- `.claude/pesquisa-semanal.md`: instruções da pesquisa automática com o Claude (toda segunda, com revisão mensal na primeira segunda do mês).
 
 ## Comandos
 
