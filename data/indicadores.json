@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-10-26T02:48:11.725Z",
+  "atualizadoEm": "2026-10-26T02:49:09.606Z",
   "itens": [
     {
       "id": "ipca12m",
@@ -28,7 +28,7 @@
       "unidade": "% ao ano",
       "casas": 2,
       "valor": 13.75,
-      "referencia": "04/11/2026",
+      "referencia": "25/10/2026",
       "valorAntes": 13.75,
       "referenciaAntes": "31/12/2022",
       "melhorQuando": "neutro",
@@ -113,7 +113,7 @@
       "casas": 0,
       "prefixo": true,
       "valor": 1621,
-      "referencia": "dez/2026",
+      "referencia": "out/2026",
       "valorAntes": 1212,
       "referenciaAntes": "dez/2022",
       "melhorQuando": "maior",

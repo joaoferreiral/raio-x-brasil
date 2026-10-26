@@ -98,7 +98,10 @@ async function main() {
         const mensal = [13522, 13762, 1619, 433].includes(s);
         const ult = await sgsUltimo(s);
         valor = num(ult.valor);
-        ref = rotuloSgs(ult.data, mensal);
+        // Selic e salário mínimo vêm datados até o fim da vigência (futuro); mostra a data de hoje.
+        const [dd, mm, aaaa] = ult.data.split('/');
+        const futuro = `${aaaa}${mm}${dd}` > hoje.split('/').reverse().join('');
+        ref = rotuloSgs(futuro ? hoje : ult.data, mensal);
         const antes = await sgsPeriodo(s, mensal ? baseIniMes : baseIniDia, baseFim);
         valorAntes = num(antes.at(-1).valor);
         refAntes = rotuloSgs(antes.at(-1).data, mensal);
