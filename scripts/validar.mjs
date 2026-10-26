@@ -66,6 +66,12 @@ for (const i of indicadores.itens) {
   if (!['menor', 'maior', 'neutro'].includes(i.melhorQuando)) erro(`indicador ${i.id}: melhorQuando inválido`);
   if (!URL_OK.test(i.fonte?.url || '')) erro(`indicador ${i.id}: fonte inválida`);
   checarTermos(i.explicacao, `indicador ${i.id}`);
+  for (const n of i.naoMostra || []) {
+    if (!n.texto) erro(`indicador ${i.id}: aviso sem texto`);
+    if (/—/.test(n.texto)) erro(`indicador ${i.id}: não usar travessão (—)`);
+    if (n.fonte && !URL_OK.test(n.fonte.url || '')) erro(`indicador ${i.id}: fonte do aviso inválida`);
+    checarTermos(n.texto, `indicador ${i.id} (aviso)`);
+  }
 }
 
 // Histórico dos gráficos

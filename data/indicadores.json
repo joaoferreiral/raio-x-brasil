@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-10-26T03:24:45.690Z",
+  "atualizadoEm": "2026-10-26T03:48:23.125Z",
   "itens": [
     {
       "id": "ipca12m",
@@ -20,7 +20,19 @@
         "tipo": "sgs",
         "serie": 13522
       },
-      "verificadoEm": "26/10/2026"
+      "verificadoEm": "26/10/2026",
+      "naoMostra": [
+        {
+          "texto": "Inflação menor não quer dizer preços menores. Quer dizer que os preços sobem mais devagar. O que subiu antes continua mais caro."
+        },
+        {
+          "texto": "Cada família tem a sua inflação, porque cada uma compra coisas diferentes. Em 12 meses até set/2026, alimentação e bebidas subiram 4,66%, um pouco acima da média.",
+          "fonte": {
+            "nome": "IBGE, IPCA (tabela 7060)",
+            "url": "https://sidra.ibge.gov.br/tabela/7060"
+          }
+        }
+      ]
     },
     {
       "id": "selic",
@@ -41,7 +53,19 @@
         "tipo": "sgs",
         "serie": 432
       },
-      "verificadoEm": "26/10/2026"
+      "verificadoEm": "26/10/2026",
+      "naoMostra": [
+        {
+          "texto": "A Selic é decidida pelo [[Copom]], do Banco Central, e não pelo presidente da República. Desde 2021 o Banco Central tem autonomia definida em lei.",
+          "fonte": {
+            "nome": "Lei Complementar 179/2021",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/Lcp179.htm"
+          }
+        },
+        {
+          "texto": "O que pesa de verdade é o [[Juro real]]: a Selic menos a inflação. Em out/2026, com Selic de 13,75% e inflação de 4,58%, o juro real ficou perto de 9% ao ano."
+        }
+      ]
     },
     {
       "id": "desemprego",
@@ -61,6 +85,122 @@
       "auto": {
         "tipo": "sidra-desemprego"
       },
+      "verificadoEm": "26/10/2026",
+      "naoMostra": [
+        {
+          "texto": "A taxa só conta quem está procurando emprego. Quem desistiu de procurar, o [[Desalentado]], fica de fora. Eles eram 3,6% das pessoas que trabalham, procuram ou desistiram de procurar no fim de 2022, e 2,1% em jun-ago/2026.",
+          "fonte": {
+            "nome": "IBGE, PNAD Contínua (tabela 6807)",
+            "url": "https://sidra.ibge.gov.br/tabela/6807"
+          }
+        },
+        {
+          "texto": "A queda veio de mais gente trabalhando: eram 97,5 milhões no fim de 2022 e 103,5 milhões em jun-ago/2026. A [[Taxa de participação]] ficou parecida (62,0% e 62,2%), mas continua abaixo de 2018 (63,2%).",
+          "fonte": {
+            "nome": "IBGE, PNAD Contínua (tabela 6318)",
+            "url": "https://sidra.ibge.gov.br/tabela/6318"
+          }
+        },
+        {
+          "texto": "Ter trabalho não quer dizer ter carteira assinada. No 2º tri/2026, 37,4% de quem trabalhava estava na [[Informalidade]]. No 4º tri/2022 eram 38,9%.",
+          "fonte": {
+            "nome": "IBGE, PNAD Contínua (tabela 8529)",
+            "url": "https://sidra.ibge.gov.br/tabela/8529"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pib",
+      "nome": "Crescimento da economia (PIB)",
+      "unidade": "%",
+      "casas": 1,
+      "valor": 1.9,
+      "referencia": "2º tri/2026",
+      "valorAntes": 3,
+      "referenciaAntes": "4º tri/2022",
+      "melhorQuando": "maior",
+      "explicacao": "Quanto o [[PIB]] cresceu nos últimos 4 trimestres, comparado aos 4 anteriores. O PIB soma tudo que o país produz.",
+      "fonte": {
+        "nome": "IBGE, Contas Nacionais (tabela 5932)",
+        "url": "https://sidra.ibge.gov.br/tabela/5932"
+      },
+      "auto": {
+        "tipo": "sidra-pib"
+      },
+      "componentes": {
+        "titulo": "De onde veio o crescimento (% no ano)",
+        "anos": [
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "linhas": [
+          [
+            "PIB",
+            [
+              3.2,
+              3.4,
+              2.3
+            ]
+          ],
+          [
+            "Consumo das famílias",
+            [
+              3.2,
+              5.1,
+              1.3
+            ]
+          ],
+          [
+            "Consumo do governo",
+            [
+              3.8,
+              2,
+              2.1
+            ]
+          ],
+          [
+            "Investimentos",
+            [
+              -3,
+              6.9,
+              2.9
+            ]
+          ],
+          [
+            "Agropecuária",
+            [
+              16.3,
+              -3.7,
+              11.7
+            ]
+          ]
+        ],
+        "fonte": {
+          "nome": "IBGE, Contas Nacionais (tabela 5932)",
+          "url": "https://sidra.ibge.gov.br/tabela/5932"
+        }
+      },
+      "naoMostra": [
+        {
+          "texto": "O gasto do governo entra no [[PIB]], mas é só uma parte: em 2025, o consumo do governo foi 19,1% do PIB, e o consumo das famílias, 63,4%.",
+          "fonte": {
+            "nome": "IBGE, Contas Nacionais (tabela 1846)",
+            "url": "https://sidra.ibge.gov.br/tabela/1846"
+          }
+        },
+        {
+          "texto": "Aposentadorias e benefícios como o Bolsa Família não contam como gasto do governo no PIB. Eles aparecem quando as famílias gastam esse dinheiro, dentro do consumo das famílias.",
+          "fonte": {
+            "nome": "IBGE, Contas Nacionais (tabela 5932)",
+            "url": "https://sidra.ibge.gov.br/tabela/5932"
+          }
+        },
+        {
+          "texto": "PIB maior não quer dizer renda maior para todo mundo. Ele mostra o total produzido no país, não como esse dinheiro se divide."
+        }
+      ],
       "verificadoEm": "26/10/2026"
     },
     {
@@ -82,7 +222,23 @@
         "tipo": "sgs",
         "serie": 13762
       },
-      "verificadoEm": "26/10/2026"
+      "verificadoEm": "26/10/2026",
+      "naoMostra": [
+        {
+          "texto": "A dívida sobe quando o governo gasta mais do que arrecada, mas também quando os juros estão altos, porque os [[Juros da dívida]] se somam a ela. E cai, em % do PIB, quando a economia cresce mais rápido.",
+          "fonte": {
+            "nome": "Banco Central, estatísticas fiscais",
+            "url": "https://www.bcb.gov.br/estatisticas/estatisticasfiscais"
+          }
+        },
+        {
+          "texto": "Na pandemia ela chegou ao pico de 87,7% do PIB (out/2020). A comparação com dez/2022 parte de um valor que já vinha caindo desse pico.",
+          "fonte": {
+            "nome": "Banco Central, estatísticas fiscais",
+            "url": "https://www.bcb.gov.br/estatisticas/estatisticasfiscais"
+          }
+        }
+      ]
     },
     {
       "id": "dolar",
@@ -104,7 +260,23 @@
         "tipo": "sgs",
         "serie": 1
       },
-      "verificadoEm": "26/10/2026"
+      "verificadoEm": "26/10/2026",
+      "naoMostra": [
+        {
+          "texto": "O dólar também sobe e desce por causa de coisas de fora do Brasil, como os juros nos Estados Unidos e a força do dólar no mundo.",
+          "fonte": {
+            "nome": "Banco Central, câmbio",
+            "url": "https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes"
+          }
+        },
+        {
+          "texto": "Este é o dólar comercial (PTAX). O dólar turismo, que você paga numa viagem, costuma ser mais caro e ainda tem [[IOF]].",
+          "fonte": {
+            "nome": "Banco Central, câmbio",
+            "url": "https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes"
+          }
+        }
+      ]
     },
     {
       "id": "salario",
@@ -127,7 +299,23 @@
         "tipo": "sgs",
         "serie": 1619
       },
-      "verificadoEm": "26/10/2026"
+      "verificadoEm": "26/10/2026",
+      "naoMostra": [
+        {
+          "texto": "Nenhuma aposentadoria do INSS pode ser menor que o salário mínimo. Por isso, cada aumento do mínimo também aumenta o gasto da Previdência.",
+          "fonte": {
+            "nome": "Constituição, art. 201",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+          }
+        },
+        {
+          "texto": "Desde 2025, o ganho acima da inflação tem limite: segue as regras do [[Arcabouço fiscal]], entre 0,6% e 2,5% ao ano.",
+          "fonte": {
+            "nome": "Lei 15.077/2024",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L15077.htm"
+          }
+        }
+      ]
     },
     {
       "id": "carga",
@@ -144,7 +332,16 @@
         "nome": "Tesouro Nacional (dado preliminar)",
         "url": "https://www.contabeis.com.br/noticias/76330/carga-tributaria-do-brasil-atinge-recorde-de-32-4-do-pib-em-2025/"
       },
-      "auto": null
+      "auto": null,
+      "naoMostra": [
+        {
+          "texto": "A carga tributária soma os impostos de União, estados e municípios. Ela pode subir sem imposto novo, quando a economia cresce ou a cobrança fica mais eficiente, e também com imposto novo.",
+          "fonte": {
+            "nome": "Tesouro Nacional, resultado do Tesouro",
+            "url": "https://www.tesourotransparente.gov.br/temas/estatisticas-fiscais-e-planejamento/resultado-do-tesouro-nacional-rtn"
+          }
+        }
+      ]
     },
     {
       "id": "primario",
@@ -161,7 +358,16 @@
         "nome": "Tesouro Nacional via Agência Brasil",
         "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/deficit-primario-do-governo-central-totaliza-r-617-bilhoes-em-2025"
       },
-      "auto": null
+      "auto": null,
+      "naoMostra": [
+        {
+          "texto": "Este número não conta os [[Juros da dívida]]. Somando os juros, o rombo das contas públicas fica bem maior.",
+          "fonte": {
+            "nome": "Banco Central, estatísticas fiscais",
+            "url": "https://www.bcb.gov.br/estatisticas/estatisticasfiscais"
+          }
+        }
+      ]
     }
   ],
   "inflacaoAcumuladaDesdeBase": {

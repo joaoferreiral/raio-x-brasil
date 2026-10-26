@@ -15,6 +15,13 @@ const LIMITES = {
   dbgg: [30, 150],
   dolar: [1, 20],
   salario: [800, 10000],
+  pib: [-15, 20],
+};
+
+// Consultas no SIDRA (IBGE). {p} é o período.
+const SIDRA = {
+  desemprego: 't/6381/n1/all/v/4099/p/{p}',
+  pib: 't/5932/n1/all/v/6562/p/{p}/c11255/90707', // PIB, taxa acumulada em 4 trimestres
 };
 
 async function buscarJSON(url, tentativas = 3) {
@@ -64,14 +71,18 @@ function rotuloTrimestre(codigo) {
   return `${MESES[ini]}-${MESES[mes - 1]}/${ano}`;
 }
 
-async function sidraLinhas(periodo) {
-  const url = `https://apisidra.ibge.gov.br/values/t/6381/n1/all/v/4099/p/${encodeURIComponent(periodo)}`;
+async function sidraLinhas(periodo, consulta = SIDRA.desemprego) {
+  const url = `https://apisidra.ibge.gov.br/values/${consulta.replace('{p}', encodeURIComponent(periodo))}`;
   const dados = await buscarJSON(url);
   if (!Array.isArray(dados) || dados.length < 2) throw new Error('SIDRA vazio');
   const cab = dados[0];
   const chaveCod = Object.keys(cab).find((k) => /Trimestre/i.test(cab[k]) && /Código/i.test(cab[k]));
   return dados.slice(1).map((l) => ({ valor: num(l.V), codigo: l[chaveCod] }));
 }
+
+// codigo AAAATT -> "2º tri/2026" e "2026-06" (mês em que o trimestre termina)
+const rotuloTri = (codigo) => `${Number(codigo.slice(4))}º tri/${codigo.slice(0, 4)}`;
+const mesTri = (codigo) => `${codigo.slice(0, 4)}-${String(Number(codigo.slice(4)) * 3).padStart(2, '0')}`;
 
 async function sidraDesemprego(periodo) {
   return (await sidraLinhas(periodo)).at(-1);
@@ -97,6 +108,9 @@ async function atualizarHistorico(json, contexto, avisos) {
       } else if (item.auto.tipo === 'sidra-desemprego') {
         const linhas = await sidraLinhas(`${inicio.slice(0, 4)}${inicio.slice(5, 7)}-209912`);
         pontos = linhas.map((l) => [`${l.codigo.slice(0, 4)}-${l.codigo.slice(4, 6)}`, l.valor]);
+      } else if (item.auto.tipo === 'sidra-pib') {
+        const linhas = await sidraLinhas(`${inicio.slice(0, 4)}01-209904`, SIDRA.pib);
+        pontos = linhas.map((l) => [mesTri(l.codigo), l.valor]);
       } else continue;
       // Selic e salário mínimo vêm com datas futuras (fim da vigência).
       pontos = pontos.filter(([d, v]) => d <= hoje.slice(0, d.length) && dentroDoLimite(item.id, v));
@@ -161,6 +175,13 @@ async function main() {
         const antes = await sidraDesemprego(codBase);
         valorAntes = antes.valor;
         refAntes = rotuloTrimestre(antes.codigo);
+      } else if (item.auto.tipo === 'sidra-pib') {
+        const ult = (await sidraLinhas('last 1', SIDRA.pib)).at(-1);
+        valor = ult.valor;
+        ref = rotuloTri(ult.codigo);
+        const antes = (await sidraLinhas(`${base.getFullYear()}04`, SIDRA.pib)).at(-1);
+        valorAntes = antes.valor;
+        refAntes = rotuloTri(antes.codigo);
       } else continue;
 
       if (!dentroDoLimite(item.id, valor) || !dentroDoLimite(item.id, valorAntes)) {

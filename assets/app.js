@@ -94,6 +94,23 @@
     return `${sinal}${fmt(Math.abs(pct), 1)}%`;
   }
 
+  // Contexto que o número sozinho esconde, para ler sem tirar conclusão apressada.
+  function naoMostra(i) {
+    if (!i.naoMostra?.length) return '';
+    return `<details class="nao-mostra"><summary>O que esse número não mostra <span>${i.naoMostra.length}</span></summary><ul>${i.naoMostra.map((n) =>
+      `<li>${rich(n.texto)}${n.fonte ? ` <span class="nm-fonte">Fonte: ${link(n.fonte)}</span>` : ''}</li>`).join('')}</ul></details>`;
+  }
+
+  function componentes(i) {
+    const c = i.componentes;
+    if (!c) return '';
+    const pct = (v) => `${v > 0 ? '+' : v < 0 ? '−' : ''}${fmt(Math.abs(v), 1)}%`;
+    return `<div class="componentes"><p class="comp-tit">${esc(c.titulo)}</p><table>
+      <thead><tr><th scope="col"><span class="sr">Item</span></th>${c.anos.map((a) => `<th scope="col">${esc(a)}</th>`).join('')}</tr></thead>
+      <tbody>${c.linhas.map(([nome, vs]) => `<tr><th scope="row">${esc(nome)}</th>${vs.map((v) => `<td class="${v < 0 ? 'neg' : ''}">${pct(v)}</td>`).join('')}</tr>`).join('')}</tbody>
+    </table><p class="nm-fonte">Fonte: ${link(c.fonte)}</p></div>`;
+  }
+
   // ---------- Gráficos dos indicadores ----------
   const PERIODOS = [['7d', '7 dias', 7], ['30d', '30 dias', 30], ['12m', '12 meses', 365], ['gov', 'Governos', null]];
   let historico = { series: {} };
@@ -200,7 +217,9 @@
         <div class="ind-comp"><span>Em ${esc(i.referenciaAntes)}: <b>${antes.num}${antes.un ? ' ' + esc(antes.un) : ''}</b></span><b class="var">${variacao(i)}</b></div>
         ${historico.series[i.id] ? `<div class="graf" data-graf-box="${i.id}">${grafico(i)}</div>` : ''}
         ${extra}
+        ${componentes(i)}
         <p class="ind-exp">${rich(i.explicacao)}</p>
+        ${naoMostra(i)}
         <p class="fonte">Fonte: ${link(i.fonte)}</p>
       </article>`;
     }).join('');

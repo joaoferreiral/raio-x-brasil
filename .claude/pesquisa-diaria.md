@@ -46,7 +46,8 @@ Status: `vigente`, `encerrado`, `derrubado`, `caducou`, `em-transicao`, `suspens
 Edite a medida existente (`status`, `statusTexto`, e acrescente a fonte nova em `fontes`). Se uma medida publicada caducou ou foi derrubada antes de valer, mude o `tipo` para `nao-vingou`. **Nunca apague medidas.**
 
 ### Outros arquivos
-- `data/indicadores.json`: **não mexa** nos indicadores com `auto` preenchido (são atualizados por script). Atualize só `carga` e `primario` quando sair o dado anual oficial, movendo o valor atual para `valorAntes`.
+- `data/indicadores.json`: **não mexa** em `valor`, `referencia`, `valorAntes` e `referenciaAntes` dos indicadores com `auto` preenchido (são atualizados por script). Atualize só `carga` e `primario` quando sair o dado anual oficial, movendo o valor atual para `valorAntes`.
+- `naoMostra` (o bloco "O que esse número não mostra") e `componentes` do PIB: quando sair dado oficial novo do mesmo número citado (PNAD, IPCA por grupo, PIB trimestral ou anual), troque o número e o período no texto. Pegue o dado direto da tabela do SIDRA ou do Banco Central citada na `fonte`. Mantenha os avisos neutros: cada um explica um limite do número, sem dizer se o governo foi bem ou mal. Não remova avisos.
 - `data/gastos.json`: atualize quando o Orçamento do novo ano for sancionado (normalmente em janeiro).
 - `data/contexto.json`: em 01/01/2027 mude `mandato` para "2027 a 2030 (no cargo desde 2023)" e mantenha a base de comparação em dez/2022. A partir de 01/02/2027 remova `aviso` e `avisoFonte`.
 - `data/tributos.json`: atualize exemplos e alíquotas se mudarem.

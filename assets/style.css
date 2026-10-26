@@ -165,6 +165,26 @@ p { margin: 0; }
 .leg { display: inline-block; width: 14px; height: 0; margin-right: 6px; vertical-align: middle; border-top: 2px solid var(--ink); }
 .leg.anterior { border-top: 2px dashed var(--muted); }
 
+/* O que esse número não mostra */
+.nao-mostra { border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+.nao-mostra summary { display: flex; align-items: center; gap: 8px; padding: 10px 12px; font-size: 13px; font-weight: 600; color: var(--ink); cursor: pointer; list-style: none; }
+.nao-mostra summary::-webkit-details-marker { display: none; }
+.nao-mostra summary::before { content: "!"; flex: none; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; font-size: 11px; font-weight: 700; color: var(--bg); background: var(--accent); }
+.nao-mostra summary::after { content: "+"; margin-left: auto; font-size: 16px; font-weight: 400; color: var(--muted); }
+.nao-mostra[open] summary::after { content: "−"; }
+.nao-mostra summary span { font-size: 11px; font-weight: 600; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; }
+.nao-mostra ul { margin: 0; padding: 0 12px 12px 32px; display: grid; gap: 10px; font-size: 13px; line-height: 1.55; color: var(--ink-2); }
+.nm-fonte { display: block; margin-top: 2px; font-size: 12px; color: var(--muted); }
+.nm-fonte a { color: var(--muted); }
+.componentes { display: grid; gap: 6px; }
+.comp-tit { font-size: 12px; font-weight: 600; color: var(--muted); }
+.componentes table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.componentes th, .componentes td { padding: 5px 0 5px 12px; border-bottom: 1px solid var(--line); text-align: right; }
+.componentes thead th { font-size: 11px; font-weight: 600; color: var(--muted); }
+.componentes tbody th { text-align: left; font-weight: 500; color: var(--ink-2); }
+.componentes tbody tr:first-child { font-weight: 700; }
+.componentes td.neg { color: var(--bad); }
+
 /* Placar */
 .placar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 28px; }
 .placar-item {
