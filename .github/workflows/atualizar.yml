@@ -1,0 +1,128 @@
+name: Atualizar e publicar
+
+on:
+  schedule:
+    - cron: '17 9 * * *'   # todo dia às 06:17 no horário de Recife (UTC-3)
+  workflow_dispatch:
+    inputs:
+      pular_pesquisa:
+        description: 'Pular a pesquisa diária com o Claude (só atualizar números)'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: atualizar-publicar
+  cancel-in-progress: false
+
+jobs:
+  indicadores:
+    name: Indicadores oficiais (BC e IBGE)
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Buscar dados nas APIs oficiais
+        run: node scripts/atualizar-indicadores.mjs
+        continue-on-error: true
+      - name: Validar
+        run: node scripts/validar.mjs
+      - name: Salvar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/indicadores.json
+          git diff --cached --quiet && { echo "Nada mudou."; exit 0; }
+          git commit -m "dados: indicadores $(date -u +%F)"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+  pesquisa:
+    name: Pesquisa diária (Claude)
+    needs: indicadores
+    if: github.event_name != 'push' && inputs.pular_pesquisa != true
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TEM_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Data de hoje
+        id: hoje
+        run: echo "data=$(TZ=America/Recife date +%F)" >> "$GITHUB_OUTPUT"
+      - name: Pesquisar novidades e atualizar os dados
+        if: env.TEM_TOKEN == 'true'
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Hoje é ${{ steps.hoje.outputs.data }}. Leia e siga à risca as instruções do arquivo .claude/pesquisa-diaria.md.
+          claude_args: >-
+            --max-turns 60
+            --allowedTools "WebSearch,WebFetch,Read,Edit,Write,Glob,Grep,Bash(node scripts/validar.mjs)"
+      - name: Validar e publicar mudanças
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! node scripts/validar.mjs; then
+            echo "::warning::A pesquisa gerou dados inválidos. Mudanças descartadas."
+            git checkout -- data/
+            exit 0
+          fi
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Pesquisa sem novidades hoje." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          { echo "### Mudanças da pesquisa diária"; echo '```'; git diff --cached --stat; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          git commit -m "dados: pesquisa diária ${{ steps.hoje.outputs.data }}"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+  publicar:
+    name: Publicar no GitHub Pages
+    needs: [indicadores, pesquisa]
+    if: always() && !cancelled()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validar
+        run: node scripts/validar.mjs
+      - name: Montar site
+        run: |
+          mkdir _site
+          cp -r index.html assets data _site/
+          [ -f CNAME ] && cp CNAME _site/ || true
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4

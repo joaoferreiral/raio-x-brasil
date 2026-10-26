@@ -1,0 +1,15 @@
+{
+  "name": "raio-x-brasil",
+  "version": "1.0.0",
+  "private": true,
+  "description": "O Brasil em números, sem complicação. Impostos, gastos e indicadores atualizados todo dia.",
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes http-server -p 8080 -c-1 .",
+    "validar": "node scripts/validar.mjs",
+    "indicadores": "node scripts/atualizar-indicadores.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

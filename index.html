@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raio-X Brasil · impostos, gastos e indicadores sem complicação</title>
+  <meta name="description" content="Impostos, gastos do governo e indicadores da economia explicados em linguagem simples. Atualizado todo dia com dados oficiais do Banco Central, IBGE e Tesouro.">
+  <meta property="og:title" content="Raio-X Brasil">
+  <meta property="og:description" content="O Brasil em números, sem complicação. Impostos, gastos e indicadores atualizados todo dia.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0E1412">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E5A3A'/%3E%3Cpath d='M8 22l5-6 4 3 7-9' stroke='%23E8B91A' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="wrap topo-inner">
+      <a class="marca" href="#">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 22l5-6 4 3 7-9"/></svg>
+        <span>Raio-X Brasil</span>
+      </a>
+      <nav class="nav" aria-label="Seções">
+        <a href="#resumo">Resumo</a>
+        <a href="#impostos">Impostos</a>
+        <a href="#gastos">Gastos</a>
+        <a href="#tributos">Tributos</a>
+        <a href="#glossario">Glossário</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero wrap">
+      <p class="selo" id="selo-atualizado">Carregando dados…</p>
+      <h1>O Brasil em números, <em>sem complicação.</em></h1>
+      <p class="hero-sub">Impostos, gastos do governo e indicadores da economia explicados em linguagem simples. Os números se atualizam todo dia direto das fontes oficiais. Palavras difíceis têm explicação: é só tocar nelas.</p>
+      <div class="contexto" id="contexto"></div>
+    </section>
+
+    <section id="resumo" class="secao wrap">
+      <header class="secao-head">
+        <p class="eyebrow">01 · Resumo</p>
+        <h2>Melhorou ou piorou desde a posse?</h2>
+        <p class="secao-sub" id="resumo-sub"></p>
+      </header>
+      <div class="grid-indicadores" id="indicadores"></div>
+      <p class="nota" id="nota-inflacao"></p>
+    </section>
+
+    <section id="impostos" class="secao wrap">
+      <header class="secao-head">
+        <p class="eyebrow">02 · Impostos</p>
+        <h2>O que mudou nos impostos desde 2023</h2>
+        <p class="secao-sub" id="nota-contagem"></p>
+      </header>
+      <div class="placar" id="placar"></div>
+      <div class="filtros" id="filtros" role="toolbar" aria-label="Filtrar medidas"></div>
+      <ol class="linha-tempo" id="medidas"></ol>
+      <p class="nota" id="nota-fontes-medidas"></p>
+    </section>
+
+    <section id="gastos" class="secao wrap">
+      <header class="secao-head">
+        <p class="eyebrow">03 · Gastos</p>
+        <h2 id="gastos-titulo">Para onde vai o dinheiro</h2>
+        <p class="secao-sub" id="gastos-intro"></p>
+      </header>
+      <div class="gastos" id="lista-gastos"></div>
+      <div class="notas-gastos" id="notas-gastos"></div>
+    </section>
+
+    <section id="tributos" class="secao wrap">
+      <header class="secao-head">
+        <p class="eyebrow">04 · Tributos</p>
+        <h2>Os impostos que você paga</h2>
+        <p class="secao-sub" id="tributos-intro"></p>
+      </header>
+      <div class="filtros" id="filtros-esfera" role="toolbar" aria-label="Filtrar por esfera"></div>
+      <div class="grid-tributos" id="lista-tributos"></div>
+    </section>
+
+    <section id="glossario" class="secao wrap">
+      <header class="secao-head">
+        <p class="eyebrow">05 · Glossário</p>
+        <h2>Palavras difíceis, explicadas</h2>
+      </header>
+      <label class="busca">
+        <span class="sr">Buscar termo</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="busca-glossario" placeholder="Buscar: Selic, alíquota, PIB…" autocomplete="off">
+      </label>
+      <dl class="glossario" id="lista-glossario"></dl>
+    </section>
+
+    <section id="sobre" class="secao wrap">
+      <header class="secao-head">
+        <p class="eyebrow">06 · Sobre</p>
+        <h2>Como este site funciona</h2>
+      </header>
+      <div class="sobre">
+        <div>
+          <h3>Neutro e com fontes</h3>
+          <p>Mostramos fatos e números oficiais, sem opinião. Cada item tem link para a lei ou a fonte. Listamos aumentos e também reduções de impostos, para você tirar suas próprias conclusões.</p>
+        </div>
+        <div>
+          <h3>Atualização diária</h3>
+          <p>Todo dia os indicadores são buscados nas APIs do Banco Central e do IBGE. Uma rotina automática também pesquisa novas leis, medidas provisórias e decretos sobre impostos e atualiza a linha do tempo.</p>
+        </div>
+        <div>
+          <h3>Como comparamos</h3>
+          <p id="explicacao-base">Comparamos sempre com dezembro de 2022, o último mês antes do mandato atual começar.</p>
+        </div>
+        <div>
+          <h3>Últimas atualizações</h3>
+          <ul class="changelog" id="changelog"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="wrap">
+      <p>Raio-X Brasil. Dados: Banco Central, IBGE, Tesouro Nacional, Câmara, Senado e Planalto. Viu algum erro? Os dados são abertos e podem ser conferidos nas fontes citadas.</p>
+    </div>
+  </footer>
+
+  <div class="popover" id="popover" role="dialog" aria-modal="false" hidden>
+    <p class="popover-termo" id="popover-termo"></p>
+    <p class="popover-def" id="popover-def"></p>
+  </div>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

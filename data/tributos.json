@@ -1,0 +1,132 @@
+{
+  "atualizadoEm": "2026-10-25",
+  "intro": "Os principais tributos que você paga, direta ou indiretamente. Muitos vêm escondidos no preço do que você compra.",
+  "itens": [
+    {
+      "sigla": "IR",
+      "nome": "Imposto de Renda",
+      "esfera": "Federal",
+      "categoria": "Renda",
+      "oQueE": "Imposto sobre o que você ganha: salário, aluguel, lucro de investimentos. Quanto mais se ganha, maior a alíquota (até 27,5%).",
+      "exemplo": "Desde 2026, quem ganha até R$ 5 mil por mês não paga.",
+      "reforma": "Não muda com a reforma do consumo."
+    },
+    {
+      "sigla": "INSS",
+      "nome": "Contribuição à Previdência",
+      "esfera": "Federal",
+      "categoria": "Renda",
+      "oQueE": "Desconto no salário e cobrança sobre a folha das empresas que paga aposentadorias e benefícios do INSS.",
+      "exemplo": "Trabalhador com carteira tem de 7,5% a 14% descontado do salário.",
+      "reforma": "Não muda com a reforma do consumo."
+    },
+    {
+      "sigla": "ICMS",
+      "nome": "Imposto sobre Circulação de Mercadorias e Serviços",
+      "esfera": "Estadual",
+      "categoria": "Consumo",
+      "oQueE": "Principal imposto dos estados. Vem embutido no preço de quase tudo: comida, roupa, energia, combustível, internet.",
+      "exemplo": "Em geral fica entre 17% e 22% do preço, dependendo do estado e do produto.",
+      "reforma": "Começa a diminuir em 2029 e acaba em 2033, substituído pelo IBS."
+    },
+    {
+      "sigla": "ISS",
+      "nome": "Imposto Sobre Serviços",
+      "esfera": "Municipal",
+      "categoria": "Consumo",
+      "oQueE": "Cobrado pelas prefeituras sobre serviços: academia, salão, conserto, consultoria, streaming.",
+      "exemplo": "Varia de 2% a 5% conforme a cidade e o serviço.",
+      "reforma": "Acaba em 2033, substituído pelo IBS."
+    },
+    {
+      "sigla": "PIS/Cofins",
+      "nome": "Contribuições sobre o faturamento",
+      "esfera": "Federal",
+      "categoria": "Consumo",
+      "oQueE": "Duas contribuições cobradas sobre o faturamento das empresas, que repassam no preço. Financiam seguro-desemprego, saúde e previdência.",
+      "exemplo": "Somadas, chegam a 9,25% para muitas empresas.",
+      "reforma": "Acabam em 2027, substituídas pela CBS."
+    },
+    {
+      "sigla": "IPI",
+      "nome": "Imposto sobre Produtos Industrializados",
+      "esfera": "Federal",
+      "categoria": "Consumo",
+      "oQueE": "Cobrado sobre produtos fabricados na indústria, como carros, eletrodomésticos, cigarro e bebidas.",
+      "exemplo": "Varia muito: zero em vários alimentos, alto em cigarro e armas.",
+      "reforma": "Zerado em 2027 para quase tudo, exceto produtos da Zona Franca de Manaus."
+    },
+    {
+      "sigla": "IOF",
+      "nome": "Imposto sobre Operações Financeiras",
+      "esfera": "Federal",
+      "categoria": "Financeiro",
+      "oQueE": "Cobrado em empréstimos, câmbio, cartão no exterior, seguros e alguns investimentos. O governo pode mudar a alíquota por decreto, sem passar pelo Congresso.",
+      "exemplo": "Compra no cartão de crédito no exterior paga 3,5%.",
+      "reforma": "Não muda com a reforma do consumo."
+    },
+    {
+      "sigla": "II",
+      "nome": "Imposto de Importação",
+      "esfera": "Federal",
+      "categoria": "Comércio exterior",
+      "oQueE": "Cobrado sobre produtos que vêm de fora do país. Também é usado para proteger a indústria nacional.",
+      "exemplo": "Compras internacionais até US$ 50 estão com alíquota zero desde mai/2026.",
+      "reforma": "Não muda com a reforma do consumo."
+    },
+    {
+      "sigla": "IPVA",
+      "nome": "Imposto sobre Veículos",
+      "esfera": "Estadual",
+      "categoria": "Patrimônio",
+      "oQueE": "Pago todo ano por quem tem carro, moto ou caminhão. Metade fica com o estado e metade com a prefeitura.",
+      "exemplo": "Em geral entre 1% e 4% do valor do veículo por ano.",
+      "reforma": "Agora pode ser cobrado também de jatinhos e barcos."
+    },
+    {
+      "sigla": "IPTU",
+      "nome": "Imposto Predial e Territorial Urbano",
+      "esfera": "Municipal",
+      "categoria": "Patrimônio",
+      "oQueE": "Pago todo ano por quem tem imóvel na cidade. Inquilinos costumam pagar via contrato de aluguel.",
+      "exemplo": "Calculado sobre o valor venal (valor oficial) do imóvel.",
+      "reforma": "Prefeituras ganharam mais facilidade para atualizar a base de cálculo."
+    },
+    {
+      "sigla": "ITCMD",
+      "nome": "Imposto sobre Herança e Doações",
+      "esfera": "Estadual",
+      "categoria": "Patrimônio",
+      "oQueE": "Cobrado quando alguém recebe herança ou doação.",
+      "exemplo": "Teto de 8%. Agora todos os estados precisam cobrar mais de quem recebe mais.",
+      "reforma": "Passou a ser progressivo em todo o país."
+    },
+    {
+      "sigla": "CBS",
+      "nome": "Contribuição sobre Bens e Serviços",
+      "esfera": "Federal",
+      "categoria": "Consumo (novo)",
+      "oQueE": "Novo tributo federal da reforma. Substitui PIS, Cofins e IPI. Vai aparecer separado na nota fiscal.",
+      "exemplo": "Em 2026 está em teste com 0,9%, descontado dos tributos atuais.",
+      "reforma": "Começa de verdade em 2027."
+    },
+    {
+      "sigla": "IBS",
+      "nome": "Imposto sobre Bens e Serviços",
+      "esfera": "Estadual e municipal",
+      "categoria": "Consumo (novo)",
+      "oQueE": "Novo tributo de estados e municípios. Substitui ICMS e ISS. Junto com a CBS forma o “IVA dual”.",
+      "exemplo": "Em 2026 está em teste com 0,1%. Pela estimativa da Fazenda, CBS + IBS juntos devem ficar entre 26% e 28%, entre os mais altos do mundo.",
+      "reforma": "Sobe aos poucos de 2029 a 2033."
+    },
+    {
+      "sigla": "IS",
+      "nome": "Imposto Seletivo",
+      "esfera": "Federal",
+      "categoria": "Consumo (novo)",
+      "oQueE": "O “imposto do pecado”: cobrado a mais sobre produtos que fazem mal à saúde ou ao meio ambiente.",
+      "exemplo": "Cigarro, bebida alcoólica, refrigerante, mineração.",
+      "reforma": "Previsto para 2027, alíquotas ainda não definidas."
+    }
+  ]
+}

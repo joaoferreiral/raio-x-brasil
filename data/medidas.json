@@ -1,0 +1,502 @@
+{
+  "atualizadoEm": "2026-10-25",
+  "notaContagem": "Você pode ter ouvido que o governo criou ou aumentou uns 30 impostos. Levantamentos da imprensa chegam a números entre 25 e 37 medidas, mas eles misturam coisas diferentes: tributo novo, aumento de alíquota, fim de isenção e até propostas que nunca foram aprovadas. Aqui separamos cada uma pelo tipo e mostramos também o que foi reduzido.",
+  "notaFontes": [
+    { "nome": "Exame: 37 medidas para elevar arrecadação desde 2023", "url": "https://exame.com/economia/com-mp-dos-impostos-governo-lula-adotou-ao-menos-37-medidas-para-elevar-arrecadacao-desde-2023/" },
+    { "nome": "Ranking dos Políticos: lista atualizada em out/2026", "url": "https://ranking.org.br/en/articles/aumento-de-impostos-o-que-o-governo-lula-criou-e-elevou-desde-2023" }
+  ],
+  "itens": [
+    {
+      "id": "pis-cofins-receitas-financeiras",
+      "data": "2023-01-01",
+      "titulo": "PIS/Cofins sobre ganhos financeiros de grandes empresas volta ao normal",
+      "tipo": "aumentou",
+      "resumo": "No último dia de 2022, o governo anterior cortou pela metade o [[PIS/Cofins]] sobre receitas financeiras (rendimentos de aplicações) de grandes empresas. No primeiro dia de 2023, o novo governo desfez o corte.",
+      "quemSente": "Grandes empresas (lucro real)",
+      "status": "vigente",
+      "statusTexto": "Em vigor. O STF validou em 2024.",
+      "instrumento": "Decreto 11.374/2023",
+      "fontes": [
+        { "nome": "Decreto 11.374/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11374.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "reoneracao-gasolina",
+      "data": "2023-03-01",
+      "titulo": "Volta dos impostos federais sobre gasolina e etanol",
+      "tipo": "aumentou",
+      "resumo": "Os impostos federais sobre combustíveis estavam zerados desde 2022. Em março de 2023 eles voltaram a ser cobrados sobre gasolina e etanol, primeiro em parte e depois integralmente.",
+      "quemSente": "Todo mundo que abastece ou usa transporte",
+      "status": "vigente",
+      "statusTexto": "Em vigor.",
+      "instrumento": "MP 1.163/2023",
+      "fontes": [
+        { "nome": "MP 1.163/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/mpv/mpv1163.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "exportacao-petroleo",
+      "data": "2023-03-01",
+      "titulo": "Imposto temporário de 9,2% na exportação de petróleo",
+      "tipo": "criou",
+      "resumo": "Para compensar a volta gradual dos impostos sobre gasolina, o governo criou uma cobrança de 9,2% sobre o petróleo cru vendido para fora do país. Durou 4 meses.",
+      "quemSente": "Petroleiras",
+      "status": "encerrado",
+      "statusTexto": "Encerrado em junho de 2023.",
+      "instrumento": "MP 1.163/2023",
+      "fontes": [
+        { "nome": "MP 1.163/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/mpv/mpv1163.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "icms-creditos-pis-cofins",
+      "data": "2023-05",
+      "titulo": "ICMS sai da conta dos créditos de PIS/Cofins",
+      "tipo": "cortou-beneficio",
+      "resumo": "Empresas podiam abater do [[PIS/Cofins]] um crédito calculado com o [[ICMS]] embutido. A regra mudou e o crédito ficou menor, então elas passaram a pagar mais.",
+      "quemSente": "Empresas (efeito pode chegar aos preços)",
+      "status": "vigente",
+      "statusTexto": "Virou lei.",
+      "instrumento": "Lei 14.592/2023 (MP 1.159/2023)",
+      "fontes": [
+        { "nome": "Lei 14.592/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14592.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "isencao-ir-2sm",
+      "data": "2023-05",
+      "titulo": "Isenção do Imposto de Renda sobe para quem ganha até 2 salários mínimos",
+      "tipo": "reduziu",
+      "resumo": "A faixa de quem não paga [[Imposto de Renda]] estava congelada desde 2015. Em 2023 ela subiu para cerca de 2 salários mínimos e foi corrigida de novo em 2024.",
+      "quemSente": "Trabalhadores de renda mais baixa",
+      "status": "vigente",
+      "statusTexto": "Em vigor. Ampliada depois para R$ 5 mil (ver 2026).",
+      "instrumento": "Lei 14.663/2023 e Lei 14.848/2024",
+      "fontes": [
+        { "nome": "Lei 14.663/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "carf-voto-qualidade",
+      "data": "2023-09-20",
+      "titulo": "Desempate no Carf volta a favorecer a Receita",
+      "tipo": "regra",
+      "resumo": "O [[Carf]] julga brigas entre empresas e a Receita. Em caso de empate, o voto de minerva voltou a ser do representante do governo. Não é imposto novo, mas aumenta o que o governo consegue cobrar.",
+      "quemSente": "Empresas com disputas tributárias",
+      "status": "vigente",
+      "statusTexto": "Em vigor. O ganho de arrecadação ficou bem abaixo do previsto.",
+      "instrumento": "Lei 14.689/2023",
+      "fontes": [
+        { "nome": "Lei 14.689/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14689.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "fundos-exclusivos",
+      "data": "2023-12-12",
+      "titulo": "Fundos exclusivos dos mais ricos passam a pagar come-cotas",
+      "tipo": "criou",
+      "resumo": "Fundos de investimento feitos sob medida para uma pessoa ou família só pagavam imposto no resgate. Agora pagam todo semestre ([[Come-cotas]]), de 15% a 20% sobre o rendimento.",
+      "quemSente": "Pessoas de alta renda",
+      "status": "vigente",
+      "statusTexto": "Em vigor desde 2024.",
+      "instrumento": "Lei 14.754/2023",
+      "fontes": [
+        { "nome": "Lei 14.754/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14754.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "offshores",
+      "data": "2023-12-12",
+      "titulo": "Dinheiro em empresas no exterior (offshores) passa a pagar 15% ao ano",
+      "tipo": "criou",
+      "resumo": "Lucros guardados em empresas de brasileiros no exterior ([[Offshore|offshores]]) só eram tributados quando voltavam ao Brasil. Agora pagam 15% todo ano.",
+      "quemSente": "Pessoas de alta renda com dinheiro fora do país",
+      "status": "vigente",
+      "statusTexto": "Em vigor desde 2024.",
+      "instrumento": "Lei 14.754/2023",
+      "fontes": [
+        { "nome": "Lei 14.754/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14754.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "reforma-tributaria",
+      "data": "2023-12-20",
+      "titulo": "Reforma tributária: 5 impostos sobre consumo viram 2 (CBS e IBS)",
+      "tipo": "regra",
+      "resumo": "[[PIS/Cofins]], [[IPI]], [[ICMS]] e [[ISS]] vão sumir aos poucos até 2033 e dar lugar à [[CBS]] (federal) e ao [[IBS]] (estados e municípios). A ideia é simplificar, não aumentar a carga. Em 2026 é só teste: 0,9% de CBS e 0,1% de IBS, descontados dos impostos atuais.",
+      "quemSente": "Todos (muda o imposto embutido nos preços)",
+      "status": "em-transicao",
+      "statusTexto": "Em transição de 2026 a 2033.",
+      "instrumento": "Emenda Constitucional 132/2023 e Lei Complementar 214/2025",
+      "fontes": [
+        { "nome": "EC 132/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm", "oficial": true },
+        { "nome": "Agência Brasil: fase de testes em 2026", "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/reforma-tributaria-entra-em-fase-de-testes-em-2026", "oficial": true }
+      ]
+    },
+    {
+      "id": "imposto-seletivo",
+      "data": "2023-12-20",
+      "titulo": "Criado o Imposto Seletivo, o “imposto do pecado”",
+      "tipo": "criou",
+      "resumo": "Novo imposto sobre produtos que fazem mal à saúde ou ao meio ambiente, como cigarro, bebida alcoólica e refrigerante. Faz parte da reforma tributária. Começa em 2027 e as alíquotas ainda dependem de lei.",
+      "quemSente": "Quem consome esses produtos",
+      "status": "em-transicao",
+      "statusTexto": "Previsto para 2027. Alíquotas ainda não definidas.",
+      "instrumento": "EC 132/2023 e LC 214/2025",
+      "fontes": [
+        { "nome": "EC 132/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "ipva-jatinhos-iates",
+      "data": "2023-12-20",
+      "titulo": "Estados podem cobrar IPVA de jatinhos, iates e lanchas",
+      "tipo": "aumentou",
+      "resumo": "O [[IPVA]] era só para veículos terrestres. A reforma permitiu que os estados cobrem também de aeronaves e embarcações particulares.",
+      "quemSente": "Donos de jatinhos e barcos",
+      "status": "vigente",
+      "statusTexto": "Autorizado. Cada estado decide se cobra.",
+      "instrumento": "EC 132/2023",
+      "fontes": [
+        { "nome": "EC 132/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "itcmd-progressivo",
+      "data": "2023-12-20",
+      "titulo": "Imposto sobre herança passa a ser progressivo em todo o país",
+      "tipo": "aumentou",
+      "resumo": "O [[ITCMD]], cobrado sobre heranças e doações, agora tem que ter alíquota maior para valores maiores em todos os estados (teto de 8%).",
+      "quemSente": "Quem recebe heranças ou doações maiores",
+      "status": "vigente",
+      "statusTexto": "Em vigor. Cada estado ajusta sua lei.",
+      "instrumento": "EC 132/2023",
+      "fontes": [
+        { "nome": "EC 132/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "bets-tributacao",
+      "data": "2023-12-29",
+      "titulo": "Apostas online (bets) passam a pagar imposto",
+      "tipo": "criou",
+      "resumo": "As bets foram regulamentadas e passaram a pagar 12% sobre o faturamento. Quem ganha prêmio paga 15% de [[Imposto de Renda]] sobre o lucro.",
+      "quemSente": "Empresas de apostas e apostadores",
+      "status": "vigente",
+      "statusTexto": "Alíquota subiu depois (ver dez/2025). Em set/2026 uma MP proibiu as bets.",
+      "instrumento": "Lei 14.790/2023",
+      "fontes": [
+        { "nome": "Lei 14.790/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14790.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "subvencoes-icms",
+      "data": "2023-12-29",
+      "titulo": "Fim da isenção de IR para incentivos de ICMS",
+      "tipo": "cortou-beneficio",
+      "resumo": "Empresas que recebiam descontos de [[ICMS]] dos estados não pagavam [[Imposto de Renda]] sobre esse benefício. Isso acabou.",
+      "quemSente": "Empresas com incentivos estaduais",
+      "status": "vigente",
+      "statusTexto": "Em vigor desde 2024.",
+      "instrumento": "Lei 14.789/2023",
+      "fontes": [
+        { "nome": "Lei 14.789/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14789.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "jcp-limite",
+      "data": "2023-12-29",
+      "titulo": "Regras mais duras para os Juros sobre Capital Próprio",
+      "tipo": "cortou-beneficio",
+      "resumo": "[[JCP]] é uma forma de empresas pagarem acionistas pagando menos imposto. A base de cálculo ficou menor, reduzindo o benefício.",
+      "quemSente": "Grandes empresas e acionistas",
+      "status": "vigente",
+      "statusTexto": "Em vigor desde 2024.",
+      "instrumento": "Lei 14.789/2023",
+      "fontes": [
+        { "nome": "Lei 14.789/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14789.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "ipi-armas",
+      "data": "2024-01-01",
+      "titulo": "IPI de armas e munições quase dobra",
+      "tipo": "aumentou",
+      "resumo": "O [[IPI]] de armas de fogo subiu de 29,25% para 55% e o de munições de 13% para 25%.",
+      "quemSente": "Compradores de armas e munição",
+      "status": "vigente",
+      "statusTexto": "Em vigor.",
+      "instrumento": "Decreto de 31/10/2023",
+      "fontes": [
+        { "nome": "Ranking dos Políticos (lista de medidas)", "url": "https://ranking.org.br/en/articles/aumento-de-impostos-o-que-o-governo-lula-criou-e-elevou-desde-2023", "oficial": false }
+      ]
+    },
+    {
+      "id": "importacao-eletricos",
+      "data": "2024-01-01",
+      "titulo": "Volta o imposto de importação de carros elétricos e híbridos",
+      "tipo": "aumentou",
+      "resumo": "Carros elétricos importados eram isentos do [[Imposto de Importação]]. A cobrança voltou em 2024 e foi subindo até chegar a 35% em julho de 2026.",
+      "quemSente": "Quem compra carro elétrico importado",
+      "status": "vigente",
+      "statusTexto": "Escalonamento concluído em jul/2026.",
+      "instrumento": "Resolução Gecex/Camex",
+      "fontes": [
+        { "nome": "Ranking dos Políticos (lista de medidas)", "url": "https://ranking.org.br/en/articles/aumento-de-impostos-o-que-o-governo-lula-criou-e-elevou-desde-2023", "oficial": false }
+      ]
+    },
+    {
+      "id": "importacao-paineis-solares",
+      "data": "2024-01-01",
+      "titulo": "Imposto de importação sobre painéis solares sobe",
+      "tipo": "aumentou",
+      "resumo": "A alíquota do [[Imposto de Importação]] sobre painéis solares passou de 6% para 10,8%, para proteger a indústria nacional.",
+      "quemSente": "Quem instala energia solar",
+      "status": "vigente",
+      "statusTexto": "Em vigor.",
+      "instrumento": "Resolução Gecex/Camex",
+      "fontes": [
+        { "nome": "Ranking dos Políticos (lista de medidas)", "url": "https://ranking.org.br/en/articles/aumento-de-impostos-o-que-o-governo-lula-criou-e-elevou-desde-2023", "oficial": false }
+      ]
+    },
+    {
+      "id": "reoneracao-diesel",
+      "data": "2024-01-01",
+      "titulo": "Volta do PIS/Cofins sobre diesel e biodiesel",
+      "tipo": "aumentou",
+      "resumo": "Os impostos federais sobre diesel, zerados em 2022, voltaram a ser cobrados integralmente. Diesel move caminhões, então afeta o frete e o preço de quase tudo.",
+      "quemSente": "Transporte de cargas e, indiretamente, todos",
+      "status": "vigente",
+      "statusTexto": "Em vigor.",
+      "instrumento": "Fim da desoneração temporária",
+      "fontes": [
+        { "nome": "Ranking dos Políticos (lista de medidas)", "url": "https://ranking.org.br/en/articles/aumento-de-impostos-o-que-o-governo-lula-criou-e-elevou-desde-2023", "oficial": false }
+      ]
+    },
+    {
+      "id": "spvat",
+      "data": "2024-05-16",
+      "titulo": "Volta do seguro obrigatório de veículos (SPVAT), depois cancelada",
+      "tipo": "nao-vingou",
+      "resumo": "O antigo DPVAT foi recriado como SPVAT, uma cobrança anual para donos de veículos. Antes de começar a ser cobrado, o Congresso extinguiu de novo.",
+      "quemSente": "Donos de veículos (não chegou a ser cobrado)",
+      "status": "derrubado",
+      "statusTexto": "Extinto em dez/2024.",
+      "instrumento": "LC 207/2024, revogada pela LC 211/2024",
+      "fontes": [
+        { "nome": "LC 207/2024 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp207.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "taxa-blusinhas",
+      "data": "2024-08-01",
+      "titulo": "“Taxa das blusinhas”: compras internacionais até US$ 50 passam a pagar 20%",
+      "tipo": "cortou-beneficio",
+      "resumo": "Compras em sites estrangeiros (Shein, Shopee, AliExpress) de até US$ 50 não pagavam [[Imposto de Importação]] federal. Passaram a pagar 20%, além do [[ICMS]] estadual.",
+      "quemSente": "Quem compra em sites internacionais",
+      "status": "encerrado",
+      "statusTexto": "Zerada em mai/2026 e encerrada por lei em set/2026 (ver 2026).",
+      "instrumento": "Lei 14.902/2024",
+      "fontes": [
+        { "nome": "Lei 14.902/2024 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14902.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "reoneracao-folha",
+      "data": "2024-09-16",
+      "titulo": "Reoneração gradual da folha de pagamento",
+      "tipo": "aumentou",
+      "resumo": "17 setores que empregam muita gente pagavam menos contribuição ao INSS sobre os salários ([[Desoneração|desoneração]]). Esse desconto vai acabando aos poucos de 2025 a 2028.",
+      "quemSente": "Empresas de 17 setores e pequenos municípios",
+      "status": "em-transicao",
+      "statusTexto": "Em transição até 2028.",
+      "instrumento": "Lei 14.973/2024",
+      "fontes": [
+        { "nome": "Lei 14.973/2024 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14973.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "imposto-minimo-multinacionais",
+      "data": "2024-12-27",
+      "titulo": "Imposto mínimo de 15% para multinacionais",
+      "tipo": "criou",
+      "resumo": "Grandes grupos multinacionais que pagam menos de 15% de imposto sobre o lucro no Brasil passam a pagar um adicional de [[CSLL]] para chegar a esse mínimo. Segue um acordo global da OCDE.",
+      "quemSente": "Multinacionais com faturamento acima de 750 milhões de euros",
+      "status": "vigente",
+      "statusTexto": "Em vigor desde 2025.",
+      "instrumento": "Lei 15.079/2024",
+      "fontes": [
+        { "nome": "Lei 15.079/2024 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l15079.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "cesta-basica-zero",
+      "data": "2025-01-16",
+      "titulo": "Cesta básica nacional com imposto zero e cashback para famílias pobres",
+      "tipo": "reduziu",
+      "resumo": "A regulamentação da reforma tributária zera a [[CBS]] e o [[IBS]] sobre alimentos da cesta básica nacional e cria devolução de parte do imposto (cashback) para famílias de baixa renda.",
+      "quemSente": "Todos, principalmente famílias de baixa renda",
+      "status": "em-transicao",
+      "statusTexto": "Vale conforme CBS e IBS entram em vigor (a partir de 2027).",
+      "instrumento": "Lei Complementar 214/2025",
+      "fontes": [
+        { "nome": "LC 214/2025 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "fim-perse",
+      "data": "2025-03",
+      "titulo": "Fim do Perse, desconto de impostos para eventos e turismo",
+      "tipo": "cortou-beneficio",
+      "resumo": "O Perse zerou impostos de empresas de eventos e turismo após a pandemia. O programa tinha teto de R$ 15 bilhões, que foi atingido, e acabou.",
+      "quemSente": "Bares, eventos, hotéis e turismo",
+      "status": "encerrado",
+      "statusTexto": "Encerrado em 2025.",
+      "instrumento": "Lei 14.859/2024 (teto do programa)",
+      "fontes": [
+        { "nome": "Ranking dos Políticos (lista de medidas)", "url": "https://ranking.org.br/en/articles/aumento-de-impostos-o-que-o-governo-lula-criou-e-elevou-desde-2023", "oficial": false }
+      ]
+    },
+    {
+      "id": "iof-2025",
+      "data": "2025-05-22",
+      "titulo": "Aumento do IOF sobre câmbio, crédito para empresas e previdência privada",
+      "tipo": "aumentou",
+      "resumo": "O [[IOF]] subiu em operações como compra de moeda estrangeira, cartão internacional, empréstimos para empresas e aportes altos em VGBL. O Congresso derrubou, mas o STF restabeleceu quase tudo.",
+      "quemSente": "Quem viaja, usa cartão no exterior, empresas que pegam crédito",
+      "status": "vigente",
+      "statusTexto": "Em vigor, exceto a parte do “risco sacado”, suspensa pelo STF (jul/2025).",
+      "instrumento": "Decretos de mai e jun/2025",
+      "fontes": [
+        { "nome": "Jornal Opção: STF valida decreto do IOF", "url": "https://www.jornalopcao.com.br/justica/alexandre-de-moraes-valida-decreto-de-lula-sobre-iof-com-excecao-ao-risco-sacado-726199/", "oficial": false }
+      ]
+    },
+    {
+      "id": "mp-1303",
+      "data": "2025-06-11",
+      "titulo": "MP que taxava LCI, LCA, cripto e outros investimentos",
+      "tipo": "nao-vingou",
+      "resumo": "Uma [[Medida Provisória]] propôs cobrar imposto de investimentos isentos (LCI, LCA, CRI, CRA), alíquota única de 17,5% em aplicações, mais imposto para bets e bancos. A Câmara não votou e ela perdeu a validade ([[Caducar|caducou]]). É daqui que vêm cerca de 11 itens das listas de “37 impostos”.",
+      "quemSente": "Ninguém (não entrou em vigor de forma definitiva)",
+      "status": "caducou",
+      "statusTexto": "Perdeu a validade em 08/10/2025.",
+      "instrumento": "MP 1.303/2025",
+      "fontes": [
+        { "nome": "Agência Brasil: Câmara retira MP de pauta e texto caduca", "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2025-10/camara-aprova-retirada-da-mp-do-iof-da-pauta-texto-caduca", "oficial": true }
+      ]
+    },
+    {
+      "id": "isencao-ir-5mil",
+      "data": "2025-11-26",
+      "titulo": "Quem ganha até R$ 5 mil por mês deixa de pagar Imposto de Renda",
+      "tipo": "reduziu",
+      "resumo": "A partir de 2026, salário de até R$ 5 mil fica isento de [[Imposto de Renda]], e quem ganha até R$ 7.350 paga menos. Segundo o governo, cerca de 15 milhões de pessoas são beneficiadas.",
+      "quemSente": "Trabalhadores com renda até R$ 7.350",
+      "status": "vigente",
+      "statusTexto": "Em vigor desde jan/2026.",
+      "instrumento": "Lei 15.270/2025",
+      "fontes": [
+        { "nome": "Lei 15.270/2025 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "imposto-minimo-alta-renda",
+      "data": "2025-11-26",
+      "titulo": "Imposto mínimo para alta renda e 10% sobre dividendos altos",
+      "tipo": "criou",
+      "resumo": "Para compensar a isenção até R$ 5 mil, quem ganha mais de R$ 600 mil por ano passa a pagar um imposto mínimo de até 10%. [[Dividendos]] acima de R$ 50 mil por mês, pagos pela mesma empresa, têm 10% retido na fonte.",
+      "quemSente": "Pessoas com renda acima de R$ 50 mil por mês",
+      "status": "vigente",
+      "statusTexto": "Em vigor desde jan/2026.",
+      "instrumento": "Lei 15.270/2025",
+      "fontes": [
+        { "nome": "Lei 15.270/2025 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "corte-beneficios-10",
+      "data": "2025-12",
+      "titulo": "Corte de 10% nos benefícios fiscais federais",
+      "tipo": "cortou-beneficio",
+      "resumo": "Vários setores que pagavam menos imposto por algum incentivo tiveram esse desconto reduzido em 10%. Ficaram de fora Simples Nacional, cesta básica, Zona Franca de Manaus e outros casos.",
+      "quemSente": "Empresas com incentivos fiscais, incluindo lucro presumido",
+      "status": "vigente",
+      "statusTexto": "Em vigor em 2026.",
+      "instrumento": "Lei Complementar 224/2025",
+      "fontes": [
+        { "nome": "LC 224/2025 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp224.htm", "oficial": true },
+        { "nome": "Câmara: aprovação do PLP 128/2025", "url": "https://www.camara.leg.br/noticias/1233924-camara-aprova-projeto-que-reduz-beneficios-fiscais-federais-e-aumenta-tributacao-de-bets-e-fintechs", "oficial": true }
+      ]
+    },
+    {
+      "id": "jcp-175",
+      "data": "2025-12",
+      "titulo": "Imposto sobre Juros sobre Capital Próprio sobe de 15% para 17,5%",
+      "tipo": "aumentou",
+      "resumo": "O [[Imposto de Renda]] retido sobre [[JCP]] pago a acionistas subiu 2,5 pontos.",
+      "quemSente": "Acionistas de empresas que pagam JCP",
+      "status": "vigente",
+      "statusTexto": "Em vigor em 2026.",
+      "instrumento": "Lei Complementar 224/2025",
+      "fontes": [
+        { "nome": "LC 224/2025 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp224.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "bets-15",
+      "data": "2025-12",
+      "titulo": "Imposto das bets sobe de 12% para 15% até 2028",
+      "tipo": "aumentou",
+      "resumo": "A cobrança sobre o faturamento das casas de apostas sobe aos poucos: 13% em 2026, 14% em 2027 e 15% em 2028. Metade do aumento vai para a saúde.",
+      "quemSente": "Empresas de apostas",
+      "status": "vigente",
+      "statusTexto": "Aprovado. Em set/2026 uma MP proibiu as bets (ver 2026).",
+      "instrumento": "Lei Complementar 224/2025",
+      "fontes": [
+        { "nome": "LC 224/2025 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp224.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "csll-fintechs",
+      "data": "2025-12",
+      "titulo": "Fintechs e bolsas pagam mais CSLL",
+      "tipo": "aumentou",
+      "resumo": "A [[CSLL]] de fintechs de crédito sobe de 15% para 17,5% (20% a partir de 2028). Bolsas e outras instituições financeiras vão de 9% para 12% (15% a partir de 2028).",
+      "quemSente": "Fintechs e instituições financeiras",
+      "status": "vigente",
+      "statusTexto": "Em vigor em 2026.",
+      "instrumento": "Lei Complementar 224/2025",
+      "fontes": [
+        { "nome": "LC 224/2025 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp224.htm", "oficial": true }
+      ]
+    },
+    {
+      "id": "fim-taxa-blusinhas",
+      "data": "2026-05-12",
+      "titulo": "Fim da “taxa das blusinhas”",
+      "tipo": "reduziu",
+      "resumo": "O [[Imposto de Importação]] federal de compras internacionais até US$ 50 foi zerado. Em setembro, a lei confirmou o fim e reduziu de 60% para 30% a alíquota de compras até US$ 3 mil. O [[ICMS]] estadual continua sendo cobrado.",
+      "quemSente": "Quem compra em sites internacionais",
+      "status": "vigente",
+      "statusTexto": "Em vigor. Lei sancionada em 10/09/2026.",
+      "instrumento": "MP 1.357/2026 e Lei 15.502/2026",
+      "fontes": [
+        { "nome": "Senado: fim da taxa das blusinhas é sancionado", "url": "https://www12.senado.leg.br/noticias/audios/2026/09/fim-da-taxa-das-blusinhas-e-sancionado", "oficial": true }
+      ]
+    },
+    {
+      "id": "proibicao-bets",
+      "data": "2026-09-25",
+      "titulo": "MP proíbe apostas esportivas e jogos online",
+      "tipo": "regra",
+      "resumo": "Não é imposto, mas mexe com a arrecadação: uma [[Medida Provisória]] proibiu a oferta e a propaganda de bets no país. As empresas recorreram ao STF. O Congresso tem até 23/11/2026 para votar.",
+      "quemSente": "Empresas de apostas e apostadores",
+      "status": "vigente",
+      "statusTexto": "Em vigor provisoriamente. Pendente de votação e de decisão do STF.",
+      "instrumento": "MP 1.394/2026",
+      "fontes": [
+        { "nome": "Senado: resumo da MPV 1394", "url": "https://www12.senado.leg.br/publicacoes/estudos-legislativos/tipos-de-estudos/sumarios-de-proposicoes/mpv1394", "oficial": true }
+      ]
+    }
+  ]
+}

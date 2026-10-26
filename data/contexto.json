@@ -1,0 +1,19 @@
+{
+  "governoAtual": {
+    "presidente": "Luiz Inácio Lula da Silva",
+    "partido": "PT",
+    "mandato": "2023 a 2026",
+    "inicio": "2023-01-01",
+    "fim": "2026-12-31"
+  },
+  "aviso": "Lula foi reeleito no 2º turno de 25/10/2026, com 51,79% dos votos válidos, contra 48,21% de Flávio Bolsonaro (PL). O novo mandato vai de 2027 a 2030.",
+  "avisoFonte": {
+    "nome": "InfoMoney, apuração do TSE",
+    "url": "https://www.infomoney.com.br/politica/ao-vivo-eleicoes-segundo-turno-2026/"
+  },
+  "baseComparacao": {
+    "data": "2022-12-31",
+    "rotulo": "dez/2022",
+    "explicacao": "Comparamos sempre com dezembro de 2022, o último mês antes do atual mandato começar. Assim dá pra ver o que mudou desde a posse."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "atualizadoEm": "2026-10-25",
+  "ano": 2026,
+  "populacao": 213400000,
+  "titulo": "Para onde vai o dinheiro do governo federal em 2026",
+  "intro": "Valores previstos no Orçamento federal de 2026, aprovado pelo Congresso e sancionado em janeiro. Mostramos também quanto isso dá por brasileiro, por ano.",
+  "totalSemRolagem": 4719.2,
+  "rolagem": 1823.0,
+  "notaRolagem": "O Orçamento total é de R$ 6,5 trilhões, mas R$ 1,8 trilhão é só [[Rolagem da dívida|rolagem da dívida]]: o governo pega dinheiro novo emprestado para pagar dívida que está vencendo. Por isso deixamos esse valor de fora da comparação.",
+  "notaSobreposicao": "Algumas categorias se sobrepõem (por exemplo, o salário de médicos e professores federais está em Pessoal e também conta em Saúde e Educação), então os valores não devem ser somados.",
+  "itens": [
+    { "nome": "Previdência (aposentadorias e pensões do INSS)", "valorBi": 1146.0, "explicacao": "Maior gasto do governo. Paga mais de 30 milhões de benefícios por mês." },
+    { "nome": "Juros da dívida pública", "valorBi": 643.9, "explicacao": "Quanto custa a dívida do governo. Sobe quando a [[Selic]] e a dívida sobem." },
+    { "nome": "Repasses a estados e municípios", "valorBi": 592.2, "explicacao": "Parte dos impostos federais que a Constituição manda dividir com estados e prefeituras." },
+    { "nome": "Servidores federais (salários e encargos)", "valorBi": 489.5, "explicacao": "Ativos, aposentados e pensionistas do serviço público federal, incluindo militares." },
+    { "nome": "Amortização da dívida", "valorBi": 397.5, "explicacao": "Parte do principal da dívida que é efetivamente paga, e não rolada." },
+    { "nome": "Saúde (mínimo do SUS)", "valorBi": 254.9, "explicacao": "Ações e serviços públicos de saúde. A Constituição define um valor mínimo." },
+    { "nome": "Educação (Ministério da Educação)", "valorBi": 222.4, "explicacao": "Universidades e institutos federais, Fundeb, merenda, livros didáticos." },
+    { "nome": "Bolsa Família", "valorBi": 158.0, "explicacao": "Transferência de renda para famílias de baixa renda." },
+    { "nome": "Investimentos (obras e equipamentos)", "valorBi": 80.8, "explicacao": "Estradas, habitação, obras e compras de equipamentos. É o piso de investimentos da União." },
+    { "nome": "Emendas parlamentares", "valorBi": 49.9, "explicacao": "Parte do Orçamento que deputados e senadores indicam para onde vai." }
+  ],
+  "fontes": [
+    { "nome": "Câmara dos Deputados: Raio-X do Orçamento 2026 (pós-vetos)", "url": "https://www2.camara.leg.br/orcamento-da-uniao/raio-x-do-orcamento/2026/RaioXdoOramento2026PsVetos.pdf/view" },
+    { "nome": "Fenacon: Congresso aprova Orçamento de 2026", "url": "https://fenacon.org.br/noticias/congresso-nacional-aprova-orcamento-de-2026-com-r-65-trilhoes-em-despesas/" },
+    { "nome": "Jornal Contábil: R$ 158 bi para o Bolsa Família", "url": "https://jornalcontabil.com.br/noticia/orcamento-de-2026-confirma-r-158-bilhoes-para-o-bolsa-familia/amp/" }
+  ]
+}
