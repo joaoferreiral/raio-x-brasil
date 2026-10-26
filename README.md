@@ -22,7 +22,7 @@ gh api -X POST "repos/{owner}/raio-x-brasil/pages" -f build_type=workflow
 claude setup-token
 gh secret set CLAUDE_CODE_OAUTH_TOKEN   # cole o token quando pedir
 
-# 4. Rodar a primeira atualização agora (depois roda sozinho todo dia às 06:17)
+# 4. Rodar a primeira atualização agora (depois roda sozinho todo dia às 05:00)
 gh workflow run atualizar.yml
 gh run watch
 ```
@@ -45,7 +45,7 @@ O site fica em `https://SEU-USUARIO.github.io/raio-x-brasil/`.
 
 ## Como a atualização automática funciona
 
-Todo dia às 06:17 (Recife), o workflow `.github/workflows/atualizar.yml` faz três coisas:
+Todo dia às 05:00 (Recife), o workflow `.github/workflows/atualizar.yml` faz três coisas:
 
 1. **Indicadores:** busca inflação, Selic, dólar, desemprego, dívida e salário mínimo nas APIs do Banco Central e do IBGE. Se uma fonte falhar, mantém o último valor.
 2. **Pesquisa diária:** roda o Claude Code com as regras de `.claude/pesquisa-diaria.md`. Ele procura novas leis, MPs e decretos sobre impostos, confirma em fonte oficial e atualiza `data/`. Se o resultado não passar na validação, as mudanças são descartadas.
