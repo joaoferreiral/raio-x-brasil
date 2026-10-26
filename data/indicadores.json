@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-10-25T23:00:00-03:00",
+  "atualizadoEm": "2026-10-26T02:48:11.725Z",
   "itens": [
     {
       "id": "ipca12m",
@@ -12,8 +12,15 @@
       "referenciaAntes": "dez/2022",
       "melhorQuando": "menor",
       "explicacao": "Quanto os preços subiram, em média, nos últimos 12 meses. É medida pelo [[IPCA]]. A meta oficial é 3%, com tolerância até 4,5%.",
-      "fonte": { "nome": "IBGE via Banco Central (SGS 13522)", "url": "https://www.ibge.gov.br/explica/inflacao.php" },
-      "auto": { "tipo": "sgs", "serie": 13522 }
+      "fonte": {
+        "nome": "IBGE via Banco Central (SGS 13522)",
+        "url": "https://www.ibge.gov.br/explica/inflacao.php"
+      },
+      "auto": {
+        "tipo": "sgs",
+        "serie": 13522
+      },
+      "verificadoEm": "25/10/2026"
     },
     {
       "id": "selic",
@@ -21,13 +28,20 @@
       "unidade": "% ao ano",
       "casas": 2,
       "valor": 13.75,
-      "referencia": "set/2026",
+      "referencia": "04/11/2026",
       "valorAntes": 13.75,
-      "referenciaAntes": "dez/2022",
+      "referenciaAntes": "31/12/2022",
       "melhorQuando": "neutro",
       "explicacao": "Juro básico da economia, definido pelo [[Copom]] do Banco Central. Juro alto segura a inflação, mas deixa empréstimos, financiamentos e a própria dívida do governo mais caros.",
-      "fonte": { "nome": "Banco Central (SGS 432)", "url": "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros" },
-      "auto": { "tipo": "sgs", "serie": 432 }
+      "fonte": {
+        "nome": "Banco Central (SGS 432)",
+        "url": "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros"
+      },
+      "auto": {
+        "tipo": "sgs",
+        "serie": 432
+      },
+      "verificadoEm": "25/10/2026"
     },
     {
       "id": "desemprego",
@@ -40,22 +54,35 @@
       "referenciaAntes": "out-dez/2022",
       "melhorQuando": "menor",
       "explicacao": "Parte das pessoas que procuram trabalho e não encontram. Não conta quem desistiu de procurar. Pesquisa PNAD Contínua do IBGE, feita em trimestres móveis.",
-      "fonte": { "nome": "IBGE, PNAD Contínua (tabela 6381)", "url": "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9171-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html" },
-      "auto": { "tipo": "sidra-desemprego" }
+      "fonte": {
+        "nome": "IBGE, PNAD Contínua (tabela 6381)",
+        "url": "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9171-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html"
+      },
+      "auto": {
+        "tipo": "sidra-desemprego"
+      },
+      "verificadoEm": "25/10/2026"
     },
     {
       "id": "dbgg",
       "nome": "Dívida pública bruta",
       "unidade": "% do PIB",
       "casas": 1,
-      "valor": 82.9,
+      "valor": 82.87,
       "referencia": "ago/2026",
-      "valorAntes": 71.7,
+      "valorAntes": 71.68,
       "referenciaAntes": "dez/2022",
       "melhorQuando": "menor",
       "explicacao": "Tudo que União, estados e municípios devem, comparado ao tamanho da economia ([[PIB]]). Quanto maior, mais o governo gasta com [[Juros da dívida|juros]] e mais caro fica pegar dinheiro emprestado.",
-      "fonte": { "nome": "Banco Central (SGS 13762)", "url": "https://www.bcb.gov.br/estatisticas/estatisticasfiscais" },
-      "auto": { "tipo": "sgs", "serie": 13762 }
+      "fonte": {
+        "nome": "Banco Central (SGS 13762)",
+        "url": "https://www.bcb.gov.br/estatisticas/estatisticasfiscais"
+      },
+      "auto": {
+        "tipo": "sgs",
+        "serie": 13762
+      },
+      "verificadoEm": "25/10/2026"
     },
     {
       "id": "dolar",
@@ -63,14 +90,21 @@
       "unidade": "R$",
       "casas": 2,
       "prefixo": true,
-      "valor": 5.29,
-      "referencia": "24/10/2026",
-      "valorAntes": 5.22,
+      "valor": 5.0377,
+      "referencia": "23/10/2026",
+      "valorAntes": 5.2177,
       "referenciaAntes": "30/12/2022",
       "melhorQuando": "neutro",
       "explicacao": "Quanto custa 1 dólar (cotação PTAX do Banco Central). Dólar alto encarece produtos importados, gasolina e viagens, mas ajuda quem exporta. O governo influencia, mas não controla.",
-      "fonte": { "nome": "Banco Central, PTAX (SGS 1)", "url": "https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes" },
-      "auto": { "tipo": "sgs", "serie": 1 }
+      "fonte": {
+        "nome": "Banco Central, PTAX (SGS 1)",
+        "url": "https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes"
+      },
+      "auto": {
+        "tipo": "sgs",
+        "serie": 1
+      },
+      "verificadoEm": "25/10/2026"
     },
     {
       "id": "salario",
@@ -79,14 +113,21 @@
       "casas": 0,
       "prefixo": true,
       "valor": 1621,
-      "referencia": "2026",
+      "referencia": "dez/2026",
       "valorAntes": 1212,
       "referenciaAntes": "dez/2022",
       "melhorQuando": "maior",
-      "ganhoReal": null,
+      "ganhoReal": 12.5,
       "explicacao": "Menor salário que pode ser pago por lei. Também serve de base para aposentadorias do INSS e outros benefícios. O que importa é o ganho acima da inflação (ganho real).",
-      "fonte": { "nome": "Banco Central (SGS 1619)", "url": "https://www.gov.br/trabalho-e-emprego/pt-br" },
-      "auto": { "tipo": "sgs", "serie": 1619 }
+      "fonte": {
+        "nome": "Banco Central (SGS 1619)",
+        "url": "https://www.gov.br/trabalho-e-emprego/pt-br"
+      },
+      "auto": {
+        "tipo": "sgs",
+        "serie": 1619
+      },
+      "verificadoEm": "25/10/2026"
     },
     {
       "id": "carga",
@@ -99,7 +140,10 @@
       "referenciaAntes": "2024",
       "melhorQuando": "menor",
       "explicacao": "Quanto de tudo que o país produz vira imposto (federal, estadual e municipal somados). O valor de 2025 é o maior da série do Tesouro, que começa em 2010. Sai uma vez por ano.",
-      "fonte": { "nome": "Tesouro Nacional (dado preliminar)", "url": "https://www.contabeis.com.br/noticias/76330/carga-tributaria-do-brasil-atinge-recorde-de-32-4-do-pib-em-2025/" },
+      "fonte": {
+        "nome": "Tesouro Nacional (dado preliminar)",
+        "url": "https://www.contabeis.com.br/noticias/76330/carga-tributaria-do-brasil-atinge-recorde-de-32-4-do-pib-em-2025/"
+      },
       "auto": null
     },
     {
@@ -113,9 +157,16 @@
       "referenciaAntes": "2024",
       "melhorQuando": "maior",
       "explicacao": "[[Resultado primário]]: o que o governo arrecadou menos o que gastou, sem contar juros. Negativo é [[Déficit primário|déficit]]. Em 2025, descontando gastos que a lei permite tirar da conta (como [[Precatórios|precatórios]]), o déficit contado para a meta foi de R$ 13 bi, dentro da margem tolerada.",
-      "fonte": { "nome": "Tesouro Nacional via Agência Brasil", "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/deficit-primario-do-governo-central-totaliza-r-617-bilhoes-em-2025" },
+      "fonte": {
+        "nome": "Tesouro Nacional via Agência Brasil",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/deficit-primario-do-governo-central-totaliza-r-617-bilhoes-em-2025"
+      },
       "auto": null
     }
   ],
-  "inflacaoAcumuladaDesdeBase": null
+  "inflacaoAcumuladaDesdeBase": {
+    "valor": 18.87,
+    "ate": "set/2026"
+  },
+  "avisosColeta": []
 }
