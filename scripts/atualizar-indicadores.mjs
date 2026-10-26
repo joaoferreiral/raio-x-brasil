@@ -4,6 +4,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const ARQUIVO = new URL('../data/indicadores.json', import.meta.url);
 const CONTEXTO = new URL('../data/contexto.json', import.meta.url);
+const HISTORICO = new URL('../data/historico.json', import.meta.url);
+const MENSAIS = [13522, 13762, 1619, 433];
 const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
 
 const LIMITES = {
@@ -62,14 +64,60 @@ function rotuloTrimestre(codigo) {
   return `${MESES[ini]}-${MESES[mes - 1]}/${ano}`;
 }
 
-async function sidraDesemprego(periodo) {
+async function sidraLinhas(periodo) {
   const url = `https://apisidra.ibge.gov.br/values/t/6381/n1/all/v/4099/p/${encodeURIComponent(periodo)}`;
   const dados = await buscarJSON(url);
   if (!Array.isArray(dados) || dados.length < 2) throw new Error('SIDRA vazio');
   const cab = dados[0];
   const chaveCod = Object.keys(cab).find((k) => /Trimestre/i.test(cab[k]) && /Código/i.test(cab[k]));
-  const linha = dados.at(-1);
-  return { valor: num(linha.V), codigo: linha[chaveCod] };
+  return dados.slice(1).map((l) => ({ valor: num(l.V), codigo: l[chaveCod] }));
+}
+
+async function sidraDesemprego(periodo) {
+  return (await sidraLinhas(periodo)).at(-1);
+}
+
+// Histórico dos gráficos, desde o início do governo anterior. Se uma série falhar, mantém a anterior.
+async function atualizarHistorico(json, contexto, avisos) {
+  let hist = { series: {} };
+  try { hist = JSON.parse(await readFile(HISTORICO, 'utf8')); } catch {}
+  const inicio = contexto.governoAnterior.inicio;
+  const hoje = new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Recife' });
+  const iso = (dataBr, mensal) => { const [dd, mm, aaaa] = dataBr.split('/'); return mensal ? `${aaaa}-${mm}` : `${aaaa}-${mm}-${dd}`; };
+
+  for (const item of json.itens) {
+    if (!item.auto) continue;
+    try {
+      let pontos, mensal = true;
+      if (item.auto.tipo === 'sgs') {
+        mensal = MENSAIS.includes(item.auto.serie);
+        const [a, m, d] = inicio.split('-');
+        const dados = await sgsPeriodo(item.auto.serie, `${d}/${m}/${a}`, brData(new Date()));
+        pontos = dados.map((x) => [iso(x.data, mensal), num(x.valor)]);
+      } else if (item.auto.tipo === 'sidra-desemprego') {
+        const linhas = await sidraLinhas(`${inicio.slice(0, 4)}${inicio.slice(5, 7)}-209912`);
+        pontos = linhas.map((l) => [`${l.codigo.slice(0, 4)}-${l.codigo.slice(4, 6)}`, l.valor]);
+      } else continue;
+      // Selic e salário mínimo vêm com datas futuras (fim da vigência).
+      pontos = pontos.filter(([d, v]) => d <= hoje.slice(0, d.length) && dentroDoLimite(item.id, v));
+      const degrau = item.id === 'selic' || item.id === 'salario';
+      if (item.id === 'selic') {
+        // A Selic tem um valor por dia e muda poucas vezes: guarda só as mudanças e o dia de hoje.
+        const ultimo = pontos.at(-1);
+        pontos = pontos.filter((p, k) => k === 0 || p[1] !== pontos[k - 1][1]);
+        if (pontos.at(-1) !== ultimo) pontos.push(ultimo);
+      }
+      if (pontos.length < 2) throw new Error('histórico curto');
+      hist.series[item.id] = { mensal, degrau, pontos };
+      console.log(`ok  histórico ${item.id}: ${pontos.length} pontos (${pontos[0][0]} a ${pontos.at(-1)[0]})`);
+    } catch (e) {
+      avisos.push(`histórico ${item.id}: ${e.message}`);
+      console.warn(`ERRO histórico ${item.id}: ${e.message} (mantido o anterior)`);
+    }
+  }
+  hist.atualizadoEm = new Date().toISOString();
+  // Um ponto por linha, para o diff diário ficar legível.
+  await writeFile(HISTORICO, JSON.stringify(hist).replace(/\],\[/g, '],\n[') + '\n');
 }
 
 function dentroDoLimite(id, valor) {
@@ -95,7 +143,7 @@ async function main() {
       let valor, ref, valorAntes, refAntes;
       if (item.auto.tipo === 'sgs') {
         const s = item.auto.serie;
-        const mensal = [13522, 13762, 1619, 433].includes(s);
+        const mensal = MENSAIS.includes(s);
         const ult = await sgsUltimo(s);
         valor = num(ult.valor);
         // Selic e salário mínimo vêm datados até o fim da vigência (futuro); mostra a data de hoje.
@@ -144,6 +192,8 @@ async function main() {
     avisos.push(`inflacao acumulada: ${e.message}`);
   }
 
+  await atualizarHistorico(json, contexto, avisos);
+
   json.atualizadoEm = new Date().toISOString();
   json.avisosColeta = avisos;
   await writeFile(ARQUIVO, JSON.stringify(json, null, 2) + '\n');
@@ -151,7 +201,7 @@ async function main() {
   if (avisos.length) console.log('Avisos:\n- ' + avisos.join('\n- '));
   // Só falha se TODAS as fontes automáticas falharem (provável bloqueio de rede).
   const autos = json.itens.filter((i) => i.auto).length;
-  if (avisos.filter((a) => !a.startsWith('inflacao')).length >= autos) process.exit(1);
+  if (avisos.filter((a) => !a.startsWith('inflacao') && !a.startsWith('histórico')).length >= autos) process.exit(1);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

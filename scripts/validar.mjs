@@ -21,13 +21,14 @@ try {
     gastos: await ler('gastos.json'),
     glossario: await ler('glossario.json'),
     changelog: await ler('changelog.json'),
+    historico: await ler('historico.json'),
   };
 } catch (e) {
   console.error('JSON inválido:', e.message);
   process.exit(1);
 }
 
-const { indicadores, medidas, tributos, gastos, glossario, changelog } = arquivos;
+const { contexto, indicadores, medidas, tributos, gastos, glossario, changelog, historico } = arquivos;
 
 // Glossário
 const termos = new Set();
@@ -65,6 +66,18 @@ for (const i of indicadores.itens) {
   if (!['menor', 'maior', 'neutro'].includes(i.melhorQuando)) erro(`indicador ${i.id}: melhorQuando inválido`);
   if (!URL_OK.test(i.fonte?.url || '')) erro(`indicador ${i.id}: fonte inválida`);
   checarTermos(i.explicacao, `indicador ${i.id}`);
+}
+
+// Histórico dos gráficos
+for (const g of ['governoAtual', 'governoAnterior']) if (!DATA.test(contexto[g]?.inicio || '') || !DATA.test(contexto[g]?.fim || '')) erro(`contexto.${g}: inicio/fim inválidos`);
+for (const [id, s] of Object.entries(historico.series || {})) {
+  if (!indicadores.itens.some((i) => i.id === id)) erro(`histórico ${id}: indicador não existe`);
+  const p = s.pontos || [];
+  if (p.length < 2) erro(`histórico ${id}: poucos pontos`);
+  p.forEach(([d, v], k) => {
+    if (!DATA.test(d) || !Number.isFinite(v)) erro(`histórico ${id}: ponto inválido ${JSON.stringify([d, v])}`);
+    else if (k && d <= p[k - 1][0]) erro(`histórico ${id}: datas fora de ordem em ${d}`);
+  });
 }
 
 // Tributos

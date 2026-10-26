@@ -84,18 +84,109 @@
     return melhorou ? { classe: 'bom', texto: `${seta} Melhorou` } : { classe: 'ruim', texto: `${seta} Piorou` };
   }
 
-  function variacao(i) {
-    const d = i.valor - i.valorAntes;
+  function variacao(i, antes = i.valorAntes, depois = i.valor) {
+    const d = depois - antes;
     const sinal = d > 0 ? '+' : d < 0 ? '−' : '';
     if (Math.abs(d) < 1e-9) return 'sem mudança';
     if (i.unidade === '%' || i.unidade.startsWith('% ')) return `${sinal}${fmt(Math.abs(d), i.casas ?? 1)} ponto${Math.abs(d) >= 2 ? 's' : ''}`;
     if (i.unidade === 'R$ bi') return `${sinal}R$ ${fmt(Math.abs(d), 1)} bi`;
-    const pct = (d / Math.abs(i.valorAntes)) * 100;
+    const pct = (d / Math.abs(antes)) * 100;
     return `${sinal}${fmt(Math.abs(pct), 1)}%`;
   }
 
+  // ---------- Gráficos dos indicadores ----------
+  const PERIODOS = [['7d', '7 dias', 7], ['30d', '30 dias', 30], ['12m', '12 meses', 365], ['gov', 'Governos', null]];
+  let historico = { series: {} };
+  let governos = null;
+  const periodos = {}; // período escolhido em cada cartão
+  const graficos = new Map(); // pontos desenhados, para o toque/hover
+
+  const tempo = (d) => Date.UTC(+d.slice(0, 4), +d.slice(5, 7) - 1, +(d.slice(8, 10) || 1));
+  const valorTxt = (i, v) => { const f = valorFmt(i, v); return f.num + (f.un ? ' ' + f.un : ''); };
+
+  function recorte(s, dias) {
+    const ultimo = s.pontos.at(-1)[0];
+    const corte = dias ? new Date(tempo(ultimo) - dias * 864e5).toISOString().slice(0, ultimo.length) : governos.anterior.inicio.slice(0, ultimo.length);
+    const pts = s.pontos.filter(([d]) => d >= corte);
+    const antes = s.pontos.filter(([d]) => d < corte).at(-1);
+    // Série em degrau (Selic): o valor do início do período é o último antes dele.
+    if (s.degrau && antes && (!pts.length || pts[0][0] > corte)) pts.unshift([corte, antes[1]]);
+    return pts;
+  }
+
+  function grafico(i) {
+    const s = historico.series[i.id];
+    const opcoes = PERIODOS.filter(([id]) => !s.mensal || id === '12m' || id === 'gov');
+    const p = periodos[i.id] || '12m';
+    const [, rotulo, dias] = opcoes.find(([id]) => id === p);
+    const pts = recorte(s, dias);
+    if (pts.length < 2) return '';
+
+    const t0 = tempo(pts[0][0]), t1 = tempo(pts.at(-1)[0]);
+    const vs = pts.map((x) => x[1]);
+    let min = Math.min(...vs), max = Math.max(...vs);
+    const folga = (max - min) * 0.12 || Math.abs(max) * 0.05 || 1;
+    min -= folga; max += folga;
+    const x = (d) => ((tempo(d) - t0) / (t1 - t0 || 1)) * 100;
+    const y = (v) => 100 - ((v - min) / (max - min)) * 100;
+    const linha = (lista) => lista.map(([d, v], k) => {
+      const px = x(d).toFixed(2), py = y(v).toFixed(2);
+      return !k ? `M${px} ${py}` : s.degrau ? `H${px}V${py}` : `L${px} ${py}`;
+    }).join('');
+    graficos.set(i.id, pts.map(([d, v]) => [x(d), y(v), d, v]));
+
+    let caminhos, resumo, eixo;
+    if (p === 'gov') {
+      const fim = governos.anterior.fim.slice(0, pts[0][0].length);
+      const ant = pts.filter(([d]) => d <= fim);
+      const atu = [ant.at(-1), ...pts.filter(([d]) => d > fim)];
+      const xf = x(atu[0][0]).toFixed(2);
+      caminhos = `<line class="divisa" x1="${xf}" x2="${xf}" y1="0" y2="100"/><path class="anterior" d="${linha(ant)}"/><path class="atual" d="${linha(atu)}"/>`;
+      const linhaGov = (g, lista, classe) => `<p><i class="leg ${classe}"></i>${esc(g.presidente)} (${esc(g.mandato)}): <b>${variacao(i, lista[0][1], lista.at(-1)[1])}</b> <span>de ${valorTxt(i, lista[0][1])} para ${valorTxt(i, lista.at(-1)[1])}</span></p>`;
+      resumo = linhaGov(governos.anterior, ant, 'anterior') + linhaGov({ ...governos.atual, mandato: `${governos.atual.inicio.slice(0, 4)} até hoje` }, atu, 'atual');
+      eixo = `<span>${pts[0][0].slice(0, 4)}</span><span style="left:${xf}%">${governos.atual.inicio.slice(0, 4)}</span><span>hoje</span>`;
+    } else {
+      caminhos = `<path class="atual" d="${linha(pts)}"/>`;
+      resumo = `<p>Em ${rotulo}: <b>${variacao(i, pts[0][1], pts.at(-1)[1])}</b> <span>de ${valorTxt(i, pts[0][1])} para ${valorTxt(i, pts.at(-1)[1])}</span></p>`;
+      eixo = `<span>${dataBR(pts[0][0])}</span><span>${dataBR(pts.at(-1)[0])}</span>`;
+    }
+
+    return `<div class="periodos" role="group" aria-label="Período do gráfico">${opcoes.map(([id, r]) =>
+        `<button type="button" data-ind="${i.id}" data-periodo="${id}" aria-pressed="${id === p}">${r}</button>`).join('')}</div>
+      <div class="graf-area" data-graf="${i.id}">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" role="img" aria-label="${esc(i.nome)} em ${rotulo}">${caminhos}</svg>
+        <i class="graf-dot" hidden></i>
+      </div>
+      <div class="graf-eixo${p === 'gov' ? ' gov' : ''}">${eixo}</div>
+      <div class="graf-resumo" data-resumo="${i.id}">${resumo}</div>`;
+  }
+
+  // Toque ou mouse no gráfico: mostra o valor do dia mais próximo.
+  function mostrarPonto(area, clientX) {
+    const id = area.dataset.graf;
+    const i = indicadoresPorId.get(id);
+    const pts = graficos.get(id);
+    const r = area.getBoundingClientRect();
+    const alvo = ((clientX - r.left) / r.width) * 100;
+    const [px, py, d, v] = pts.reduce((a, b) => (Math.abs(b[0] - alvo) < Math.abs(a[0] - alvo) ? b : a));
+    const dot = area.querySelector('.graf-dot');
+    dot.hidden = false;
+    dot.style.left = `${px}%`;
+    dot.style.top = `${py}%`;
+    const box = document.querySelector(`[data-resumo="${id}"]`);
+    if (!box.dataset.original) box.dataset.original = box.innerHTML;
+    box.innerHTML = `<p><b>${valorTxt(i, v)}</b> <span>em ${dataBR(d)}</span></p>`;
+  }
+  function esconderPonto(area) {
+    area.querySelector('.graf-dot').hidden = true;
+    const box = document.querySelector(`[data-resumo="${area.dataset.graf}"]`);
+    if (box.dataset.original) { box.innerHTML = box.dataset.original; delete box.dataset.original; }
+  }
+  const indicadoresPorId = new Map();
+
   function renderIndicadores(ind) {
     $('#indicadores').innerHTML = ind.itens.map((i) => {
+      indicadoresPorId.set(i.id, i);
       const a = avaliar(i);
       const v = valorFmt(i, i.valor);
       const antes = valorFmt(i, i.valorAntes);
@@ -107,6 +198,7 @@
         <div class="ind-topo"><h3 class="ind-nome">${esc(i.nome)}</h3><span class="badge ${a.classe}">${a.texto}</span></div>
         <div><p class="ind-valor">${v.num}${v.un ? `<small>${esc(v.un)}</small>` : ''}</p><p class="ind-ref">${esc(i.referencia)}</p></div>
         <div class="ind-comp"><span>Em ${esc(i.referenciaAntes)}: <b>${antes.num}${antes.un ? ' ' + esc(antes.un) : ''}</b></span><b class="var">${variacao(i)}</b></div>
+        ${historico.series[i.id] ? `<div class="graf" data-graf-box="${i.id}">${grafico(i)}</div>` : ''}
         ${extra}
         <p class="ind-exp">${rich(i.explicacao)}</p>
         <p class="fonte">Fonte: ${link(i.fonte)}</p>
@@ -266,17 +358,33 @@
     if (!e.target.closest('#popover')) fecharTermo();
     const chip = e.target.closest('[data-filtro]');
     if (chip) { filtro = chip.dataset.filtro; renderFiltros(); renderMedidas(); }
+    const per = e.target.closest('[data-periodo]');
+    if (per) {
+      periodos[per.dataset.ind] = per.dataset.periodo;
+      document.querySelector(`[data-graf-box="${per.dataset.ind}"]`).innerHTML = grafico(indicadoresPorId.get(per.dataset.ind));
+    }
     const esf = e.target.closest('[data-esfera]');
     if (esf) { esfera = esf.dataset.esfera; renderTributos(); }
   });
+  function ponteiro(e) {
+    const area = e.target.closest('.graf-area');
+    document.querySelectorAll('.graf-area').forEach((a) => { if (a !== area && !a.querySelector('.graf-dot').hidden) esconderPonto(a); });
+    if (area) mostrarPonto(area, e.clientX);
+  }
+  document.addEventListener('pointermove', ponteiro);
+  document.addEventListener('pointerdown', ponteiro);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharTermo(); });
   window.addEventListener('resize', fecharTermo);
 
   // ---------- Início ----------
   (async () => {
     try {
-      const [ctx, ind, med, gas, tri, glo, chg] = await Promise.all(
-        ['contexto', 'indicadores', 'medidas', 'gastos', 'tributos', 'glossario', 'changelog'].map(carregar));
+      const [ctx, ind, med, gas, tri, glo, chg, his] = await Promise.all([
+        ...['contexto', 'indicadores', 'medidas', 'gastos', 'tributos', 'glossario', 'changelog'].map(carregar),
+        carregar('historico').catch(() => ({ series: {} })), // sem histórico, os cartões ficam sem gráfico
+      ]);
+      historico = his;
+      governos = { atual: ctx.governoAtual, anterior: ctx.governoAnterior };
       glo.itens.forEach((g) => {
         glossario.set(g.termo.toLowerCase(), g);
         (g.aliases || []).forEach((a) => glossario.set(a.toLowerCase(), g));
