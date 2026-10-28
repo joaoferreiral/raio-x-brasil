@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-10-27T14:19:32.958Z",
+  "atualizadoEm": "2026-10-28T15:01:04.062Z",
   "itens": [
     {
       "id": "ipca12m",
@@ -20,7 +20,7 @@
         "tipo": "sgs",
         "serie": 13522
       },
-      "verificadoEm": "26/10/2026",
+      "verificadoEm": "28/10/2026",
       "naoMostra": [
         {
           "texto": "Inflação menor não quer dizer preços menores. Quer dizer que os preços sobem mais devagar. O que subiu antes continua mais caro."
@@ -40,7 +40,7 @@
       "unidade": "% ao ano",
       "casas": 2,
       "valor": 13.75,
-      "referencia": "26/10/2026",
+      "referencia": "28/10/2026",
       "valorAntes": 13.75,
       "referenciaAntes": "31/12/2022",
       "melhorQuando": "neutro",
@@ -53,7 +53,7 @@
         "tipo": "sgs",
         "serie": 432
       },
-      "verificadoEm": "26/10/2026",
+      "verificadoEm": "28/10/2026",
       "naoMostra": [
         {
           "texto": "A Selic é decidida pelo [[Copom]], do Banco Central, e não pelo presidente da República. Desde 2021 o Banco Central tem autonomia definida em lei.",
@@ -85,7 +85,7 @@
       "auto": {
         "tipo": "sidra-desemprego"
       },
-      "verificadoEm": "27/10/2026",
+      "verificadoEm": "28/10/2026",
       "naoMostra": [
         {
           "texto": "A taxa só conta quem está procurando emprego. Quem desistiu de procurar, o [[Desalentado]], fica de fora. Eles eram 3,6% das pessoas que trabalham, procuram ou desistiram de procurar no fim de 2022, e 2,1% em jun-ago/2026.",
@@ -201,7 +201,7 @@
           "texto": "PIB maior não quer dizer renda maior para todo mundo. Ele mostra o total produzido no país, não como esse dinheiro se divide."
         }
       ],
-      "verificadoEm": "27/10/2026"
+      "verificadoEm": "28/10/2026"
     },
     {
       "id": "dbgg",
@@ -222,7 +222,7 @@
         "tipo": "sgs",
         "serie": 13762
       },
-      "verificadoEm": "26/10/2026",
+      "verificadoEm": "28/10/2026",
       "naoMostra": [
         {
           "texto": "A dívida sobe quando o governo gasta mais do que arrecada, mas também quando os juros estão altos, porque os [[Juros da dívida]] se somam a ela. E cai, em % do PIB, quando a economia cresce mais rápido.",
@@ -246,8 +246,8 @@
       "unidade": "R$",
       "casas": 2,
       "prefixo": true,
-      "valor": 5.5007,
-      "referencia": "26/10/2026",
+      "valor": 5.3346,
+      "referencia": "27/10/2026",
       "valorAntes": 5.2177,
       "referenciaAntes": "30/12/2022",
       "melhorQuando": "neutro",
@@ -260,7 +260,7 @@
         "tipo": "sgs",
         "serie": 1
       },
-      "verificadoEm": "27/10/2026",
+      "verificadoEm": "28/10/2026",
       "naoMostra": [
         {
           "texto": "O dólar também sobe e desce por causa de coisas de fora do Brasil, como os juros nos Estados Unidos e a força do dólar no mundo.",
@@ -299,7 +299,7 @@
         "tipo": "sgs",
         "serie": 1619
       },
-      "verificadoEm": "26/10/2026",
+      "verificadoEm": "28/10/2026",
       "naoMostra": [
         {
           "texto": "Nenhuma aposentadoria do INSS pode ser menor que o salário mínimo. Por isso, cada aumento do mínimo também aumenta o gasto da Previdência.",
@@ -374,10 +374,5 @@
     "valor": 18.87,
     "ate": "set/2026"
   },
-  "avisosColeta": [
-    "ipca12m: https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados/ultimos/1?formato=json -> HTTP 503",
-    "selic: https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados/ultimos/1?formato=json -> HTTP 503",
-    "dbgg: https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados/ultimos/1?formato=json -> HTTP 503",
-    "salario: https://api.bcb.gov.br/dados/serie/bcdata.sgs.1619/dados/ultimos/1?formato=json -> The operation was aborted due to timeout"
-  ]
+  "avisosColeta": []
 }
