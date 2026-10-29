@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-10-29T15:07:18.745Z",
+  "atualizadoEm": "2026-10-29T18:50:03.960Z",
   "itens": [
     {
       "id": "ipca12m",
@@ -208,8 +208,8 @@
       "nome": "Dívida pública bruta",
       "unidade": "% do PIB",
       "casas": 1,
-      "valor": 82.87,
-      "referencia": "ago/2026",
+      "valor": 82.93,
+      "referencia": "set/2026",
       "valorAntes": 71.68,
       "referenciaAntes": "dez/2022",
       "melhorQuando": "menor",
@@ -246,8 +246,8 @@
       "unidade": "R$",
       "casas": 2,
       "prefixo": true,
-      "valor": 5.342,
-      "referencia": "28/10/2026",
+      "valor": 5.3744,
+      "referencia": "29/10/2026",
       "valorAntes": 5.2177,
       "referenciaAntes": "30/12/2022",
       "melhorQuando": "neutro",
