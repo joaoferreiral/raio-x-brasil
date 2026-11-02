@@ -88,14 +88,14 @@
       "verificadoEm": "02/11/2026",
       "naoMostra": [
         {
-          "texto": "A taxa só conta quem está procurando emprego. Quem desistiu de procurar, o [[Desalentado]], fica de fora. Eles eram 3,6% das pessoas que trabalham, procuram ou desistiram de procurar no fim de 2022, e 2,1% em jun-ago/2026.",
+          "texto": "A taxa só conta quem está procurando emprego. Quem desistiu de procurar, o [[Desalentado]], fica de fora. Eles eram 3,6% das pessoas que trabalham, procuram ou desistiram de procurar no fim de 2022, e 2,2% em jul-set/2026.",
           "fonte": {
             "nome": "IBGE, PNAD Contínua (tabela 6807)",
             "url": "https://sidra.ibge.gov.br/tabela/6807"
           }
         },
         {
-          "texto": "A queda veio de mais gente trabalhando: eram 97,5 milhões no fim de 2022 e 103,5 milhões em jun-ago/2026. A [[Taxa de participação]] ficou parecida (62,0% e 62,2%), mas continua abaixo de 2018 (63,2%).",
+          "texto": "A queda veio de mais gente trabalhando: eram 97,5 milhões no fim de 2022 e 103,6 milhões em jul-set/2026. A [[Taxa de participação]] ficou parecida (62,0% e 62,2%), mas continua abaixo de 2018 (63,2%).",
           "fonte": {
             "nome": "IBGE, PNAD Contínua (tabela 6318)",
             "url": "https://sidra.ibge.gov.br/tabela/6318"
