@@ -11,6 +11,8 @@ Use WebSearch e WebFetch para procurar, no Brasil, notícias e atos publicados n
 - Novas leis, medidas provisórias, decretos ou portarias que **criem, aumentem, reduzam ou extingam** tributos federais (IR, IOF, IPI, PIS/Cofins, CSLL, Imposto de Importação, contribuições).
 - Votações no Congresso ou decisões do STF sobre medidas que **já estão** em `data/medidas.json` (mudança de status: aprovada, derrubada, caducou, suspensa, sancionada).
 - Reforma tributária: alíquotas da CBS, do IBS e do Imposto Seletivo, cronograma, regulamentações.
+- Decisões do governo, do Congresso ou de agências que **não são imposto** mas mexem no bolso: mistura de combustíveis, preço de energia e bandeira tarifária, tarifas reguladas, regras de crédito, benefícios sociais. Vão para `data/decisoes.json` com `tipo: "decisao"`.
+- Previsões de peso sobre a economia brasileira (FMI, Banco Central, Tesouro, IFI, grandes bancos): dívida, PIB, inflação, juros, crise. Vão para `data/decisoes.json` com `tipo: "projecao"`.
 - Novos dados oficiais anuais: carga tributária (Tesouro), resultado primário do ano (Tesouro), Orçamento do próximo ano sancionado (LOA).
 
 Sugestões de busca: `"medida provisória" imposto`, `decreto IOF alíquota`, `"sanciona" lei tributo`, `Congresso aprova imposto`, `STF tributo decisão`, `Imposto Seletivo alíquotas`, `Receita Federal nova regra`, além do nome de cada medida com status pendente.
@@ -49,6 +51,12 @@ Tipos:
 
 Status: `vigente`, `encerrado`, `derrubado`, `caducou`, `em-transicao`, `suspenso`, `em-tramitacao`.
 
+### Nova decisão ou previsão em `data/decisoes.json`
+Campos comuns: `id` (kebab-case único, diferente dos ids de medidas), `data` (AAAA-MM-DD), `tipo`, `area` (ex.: Combustível, Energia, Contas públicas, Economia), `titulo`, `resumo`, `fontes`.
+- `decisao`: também `quemGanha`, `quemPerde` e `instrumento`. Diga fatos dos dois lados, com números quando houver. Nunca escreva que a decisão é boa ou ruim para a população.
+- `projecao`: também `quem` (quem fez a previsão) e `contraponto` (o que outras fontes dizem, de preferência o número oficial do governo ou do Banco Central). Atribua sempre a previsão a quem a fez ("o UBS prevê", nunca "o Brasil terá"). Previsão de um banco só entra se tiver número ou afirmação clara e sair em veículo reconhecido. Não publique só as previsões pessimistas ou só as otimistas: se uma previsão destoa das outras, diga isso no `contraponto`.
+- Nunca apague itens. Se uma previsão se confirmar ou não, acrescente isso no `contraponto` com a fonte.
+
 ### Mudança de status
 Edite a medida existente (`status`, `statusTexto`, e acrescente a fonte nova em `fontes`). Se uma medida publicada caducou ou foi derrubada antes de valer, mude o `tipo` para `nao-vingou`. **Nunca apague medidas.**
 
@@ -73,7 +81,7 @@ Se mudou algo, adicione **um** item no início de `data/changelog.json` com a da
 
 ## Limites
 
-- No máximo 5 medidas novas por dia.
+- No máximo 5 medidas novas e 5 decisões ou previsões novas por semana.
 - Não mexa em `index.html`, `assets/`, `scripts/` ou `.github/`.
 - Se não houver nada novo e confirmado, **não altere nenhum arquivo**. Isso é normal.
 

@@ -295,6 +295,33 @@
     }).join('');
   }
 
+  // ---------- Decisões e previsões ----------
+  const TIPOS_DEC = {
+    decisao: { rotulo: 'Decisões', cor: 'var(--t-regra)', campos: [['quemGanha', 'Quem ganha'], ['quemPerde', 'Quem perde'], ['instrumento', 'Norma']] },
+    projecao: { rotulo: 'Previsões', cor: 'var(--muted)', campos: [['quem', 'Quem prevê'], ['contraponto', 'O que outras fontes dizem']] },
+  };
+  let decisoes = [];
+  let filtroDec = 'todos';
+  function renderDecisoes() {
+    const cont = decisoes.reduce((a, d) => ((a[d.tipo] = (a[d.tipo] || 0) + 1), a), {});
+    $('#filtros-decisoes').innerHTML = [['todos', 'Todas', null, decisoes.length], ...Object.entries(TIPOS_DEC).map(([t, i]) => [t, i.rotulo, i.cor, cont[t] || 0])]
+      .filter((c) => c[3] > 0).map(([id, rot, cor, n]) =>
+        `<button type="button" class="chip" data-filtro-dec="${id}" aria-pressed="${filtroDec === id}" ${cor ? `style="--c:${cor}"` : ''}>${cor ? '<i></i>' : ''}${esc(rot)} <span>${n}</span></button>`).join('');
+    $('#decisoes-lista').innerHTML = decisoes
+      .filter((d) => filtroDec === 'todos' || d.tipo === filtroDec)
+      .sort((a, b) => b.data.localeCompare(a.data))
+      .map((d) => {
+        const t = TIPOS_DEC[d.tipo];
+        return `<li class="medida" style="--c:${t.cor}"><div>
+          <div class="medida-meta"><span class="tag">${d.tipo === 'projecao' ? 'Previsão' : 'Decisão'} · ${esc(d.area)}</span><time datetime="${esc(d.data)}">${dataBR(d.data)}</time></div>
+          <h3>${esc(d.titulo)}</h3>
+          <p class="medida-resumo">${rich(d.resumo)}</p>
+          <dl class="medida-info medida-info-bloco">${t.campos.map(([c, r]) => `<div><dt>${r}: </dt><dd>${rich(d[c])}</dd></div>`).join('')}</dl>
+          <p class="medida-fontes">${d.fontes.map(link).join('')}</p>
+        </div></li>`;
+      }).join('');
+  }
+
   // ---------- Gastos ----------
   function renderGastos(g) {
     $('#gastos-titulo').textContent = g.titulo;
@@ -382,6 +409,8 @@
       periodos[per.dataset.ind] = per.dataset.periodo;
       document.querySelector(`[data-graf-box="${per.dataset.ind}"]`).innerHTML = grafico(indicadoresPorId.get(per.dataset.ind));
     }
+    const dec = e.target.closest('[data-filtro-dec]');
+    if (dec) { filtroDec = dec.dataset.filtroDec; renderDecisoes(); }
     const esf = e.target.closest('[data-esfera]');
     if (esf) { esfera = esf.dataset.esfera; renderTributos(); }
   });
@@ -398,8 +427,8 @@
   // ---------- Início ----------
   (async () => {
     try {
-      const [ctx, ind, med, gas, tri, glo, chg, his] = await Promise.all([
-        ...['contexto', 'indicadores', 'medidas', 'gastos', 'tributos', 'glossario', 'changelog'].map(carregar),
+      const [ctx, ind, med, gas, tri, glo, chg, dec, his] = await Promise.all([
+        ...['contexto', 'indicadores', 'medidas', 'gastos', 'tributos', 'glossario', 'changelog', 'decisoes'].map(carregar),
         carregar('historico').catch(() => ({ series: {} })), // sem histórico, os cartões ficam sem gráfico
       ]);
       historico = his;
@@ -414,6 +443,9 @@
       renderPlacar(med);
       renderFiltros();
       renderMedidas();
+      decisoes = dec.itens;
+      $('#decisoes-intro').innerHTML = rich(dec.intro);
+      renderDecisoes();
       renderGastos(gas);
       tributos = tri.itens;
       $('#tributos-intro').textContent = tri.intro;

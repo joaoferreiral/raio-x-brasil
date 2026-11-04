@@ -22,13 +22,14 @@ try {
     glossario: await ler('glossario.json'),
     changelog: await ler('changelog.json'),
     historico: await ler('historico.json'),
+    decisoes: await ler('decisoes.json'),
   };
 } catch (e) {
   console.error('JSON inválido:', e.message);
   process.exit(1);
 }
 
-const { contexto, indicadores, medidas, tributos, gastos, glossario, changelog, historico } = arquivos;
+const { contexto, indicadores, medidas, tributos, gastos, glossario, changelog, historico, decisoes } = arquivos;
 
 // Glossário
 const termos = new Set();
@@ -58,6 +59,23 @@ for (const m of medidas.itens) {
   for (const f of m.fontes || []) if (!URL_OK.test(f.url || '')) erro(`${onde}: URL de fonte inválida`);
   if (/—/.test(m.titulo + m.resumo)) erro(`${onde}: não usar travessão (—)`);
   checarTermos(m.resumo, onde);
+}
+
+// Decisões e previsões
+const CAMPOS_DEC = { decisao: ['quemGanha', 'quemPerde', 'instrumento'], projecao: ['quem', 'contraponto'] };
+for (const d of decisoes.itens) {
+  const onde = `decisão ${d.id}`;
+  if (!d.id || ids.has(d.id)) erro(`${onde}: id ausente ou repetido`);
+  ids.add(d.id);
+  if (!DATA.test(d.data || '')) erro(`${onde}: data inválida (${d.data})`);
+  if (!CAMPOS_DEC[d.tipo]) { erro(`${onde}: tipo inválido (${d.tipo})`); continue; }
+  for (const c of ['area', 'titulo', 'resumo', ...CAMPOS_DEC[d.tipo]]) if (!d[c]) erro(`${onde}: falta ${c}`);
+  if (!Array.isArray(d.fontes) || !d.fontes.length) erro(`${onde}: precisa de pelo menos uma fonte`);
+  for (const f of d.fontes || []) if (!URL_OK.test(f.url || '')) erro(`${onde}: URL de fonte inválida`);
+  for (const c of ['titulo', 'resumo', ...CAMPOS_DEC[d.tipo]]) {
+    if (/—/.test(d[c] || '')) erro(`${onde}: não usar travessão (—) em ${c}`);
+    checarTermos(d[c], onde);
+  }
 }
 
 // Indicadores

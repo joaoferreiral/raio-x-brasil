@@ -1,0 +1,62 @@
+{
+  "atualizadoEm": "2026-11-04",
+  "intro": "Decisões que não são imposto, mas mexem no seu bolso (combustível, energia, tarifas), e previsões de bancos e instituições sobre a economia. Para cada uma mostramos quem ganha e quem perde, ou o que outras fontes dizem. Previsão não é fato: é a opinião de quem assina.",
+  "itens": [
+    {
+      "id": "gasolina-e30",
+      "data": "2025-08-01",
+      "tipo": "decisao",
+      "area": "Combustível",
+      "titulo": "Gasolina passa a ter 30% de etanol (E30)",
+      "resumo": "O Conselho Nacional de Política Energética (CNPE) aprovou em 25/06/2025 o aumento da mistura de etanol na gasolina comum de 27% para 30%, valendo desde 01/08/2025. No diesel, a mistura de biodiesel subiu para 15% (B15). A gasolina premium continua com 25%.",
+      "quemGanha": "Produtores de etanol e de biodiesel. O Ministério de Minas e Energia estimou que o litro da gasolina ficaria até R$ 0,11 mais barato, mas isso depende das margens de distribuidoras e postos.",
+      "quemPerde": "Etanol rende menos energia que gasolina, então o carro pode rodar um pouco menos por litro, principalmente os que não são flex.",
+      "instrumento": "Resolução do CNPE, com base na Lei 14.993/2024 (Combustível do Futuro)",
+      "fontes": [
+        { "nome": "Exame: CNPE aprova mistura de 30%", "url": "https://exame.com/agro/cnpe-aprova-mistura-do-etanol-na-gasolina-de-27-para-30-e-preco-do-combustivel-pode-cair" },
+        { "nome": "eixos: governo oficializa E30 e B15", "url": "https://eixos.com.br/combustiveis-e-bioenergia/biocombustiveis/governo-oficializa-aumento-do-etanol-na-gasolina-e-b15-a-partir-de-1o-de-agosto/" }
+      ]
+    },
+    {
+      "id": "projecao-fmi-divida-2027",
+      "data": "2026-04-15",
+      "tipo": "projecao",
+      "area": "Contas públicas",
+      "titulo": "FMI prevê dívida do Brasil em 100% do PIB em 2027",
+      "resumo": "No Monitor Fiscal de abril/2026, o FMI previu que a [[Dívida bruta|dívida bruta]] do Brasil sobe de 93,3% do [[PIB]] em 2025 para 96,5% em 2026 e cerca de 100% em 2027.",
+      "quem": "Fundo Monetário Internacional (FMI)",
+      "contraponto": "A conta do FMI inclui títulos do Tesouro que estão com o Banco Central, que a conta oficial brasileira não inclui. Pela conta oficial, a dívida estava em 82,9% do PIB em set/2026. O próprio governo, na proposta de diretrizes do Orçamento de 2027 (PLDO), prevê 86% em 2027 e pico de 87,8% em 2029.",
+      "fontes": [
+        { "nome": "Exame: dívida pode chegar a 100% do PIB em 2027, diz FMI", "url": "https://exame.com/economia/divida-do-brasil-pode-chegar-a-100-do-pib-em-2027-diz-fmi/" },
+        { "nome": "Times Brasil: governo projeta dívida em 86% do PIB para 2027", "url": "https://timesbrasil.com.br/brasil/governo-projeta-divida-bruta-em-86-do-pib-para-2027/" }
+      ]
+    },
+    {
+      "id": "projecao-ubs-crise-2027",
+      "data": "2026-08-07",
+      "tipo": "projecao",
+      "area": "Contas públicas",
+      "titulo": "UBS fala em “crise contratada” para 2027 sem reforma fiscal",
+      "resumo": "Solange Srour, diretora do UBS Global Wealth Management, disse que, com os juros altos de hoje, o Brasil caminha para uma crise em 2027, a menos que faça uma reforma ampla nas contas. Segundo ela, seria preciso cortar gastos de cerca de 4% do [[PIB]] para a dívida parar de subir, o que ela mesma diz ser inviável em um ano só.",
+      "quem": "UBS Global Wealth Management (banco suíço)",
+      "contraponto": "É a visão mais pessimista entre os grandes bancos. O JPMorgan, por exemplo, prevê crescimento baixo em 2027, perto de 1%, e dívida perto de 85% do PIB, sem falar em crise. O governo prevê 86% em 2027 (PLDO).",
+      "fontes": [
+        { "nome": "InfoMoney: Brasil caminha para crise em 2027 sem reforma, alerta UBS", "url": "https://www.infomoney.com.br/economia/crise-fiscal-2027-divida-pib-ubs/" }
+      ]
+    },
+    {
+      "id": "projecao-jpmorgan-2027",
+      "data": "2026-09-01",
+      "tipo": "projecao",
+      "area": "Economia",
+      "titulo": "JPMorgan prevê economia crescendo cerca de 1% em 2027",
+      "resumo": "Cassiana Fernandez, economista-chefe do JPMorgan, previu crescimento perto de 2% em 2026 e perto de 1% em 2027, inflação ([[IPCA]]) perto de 4% em 2027 e dívida perto de 85% do [[PIB]]. Para ela, as contas públicas vão decidir o rumo da economia.",
+      "quem": "JPMorgan (banco americano)",
+      "contraponto": "Em 2025 a economia cresceu 2,3% pelo IBGE. Previsões de crescimento mudam bastante ao longo do ano. O Banco Central publica toda semana a média das previsões do mercado no Boletim Focus.",
+      "fontes": [
+        { "nome": "Times Brasil: cenário fiscal será determinante em 2027, diz JPMorgan", "url": "https://timesbrasil.com.br/brasil/cenario-fiscal-sera-determinante-para-economia-brasileira-em-2027-diz-jpmorgan/" },
+        { "nome": "Banco Central: Boletim Focus", "url": "https://www.bcb.gov.br/publicacoes/focus" }
+      ]
+    }
+  ]
+}

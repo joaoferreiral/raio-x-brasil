@@ -231,6 +231,8 @@ p { margin: 0; }
 .medida-info dt { color: var(--muted); display: inline; }
 .medida-info dd { display: inline; margin: 0; font-weight: 500; }
 .medida-info div { min-width: 0; }
+.medida-info-bloco { display: grid; gap: 6px; }
+.medida-info-bloco dd { font-weight: 400; color: var(--ink-2); }
 .medida-fontes { margin-top: 10px; font-size: 13px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
 .medida-fontes a { color: var(--brand); font-weight: 500; }
 .status { font-weight: 600; }

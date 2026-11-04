@@ -7,6 +7,7 @@ Site público que explica, em linguagem simples, o estado do Brasil: impostos, g
 - `index.html`, `assets/style.css`, `assets/app.js`: site estático, sem build. O JS lê os arquivos de `data/` e monta a página.
 - `data/indicadores.json`: números do resumo. Os itens com `auto` são atualizados por `scripts/atualizar-indicadores.mjs` (APIs do Banco Central e do IBGE).
 - `data/medidas.json`: linha do tempo de mudanças nos impostos desde 2023.
+- `data/decisoes.json`: decisões que não são imposto mas mexem no bolso (`decisao`, com quem ganha e quem perde) e previsões de bancos e instituições (`projecao`, sempre com contraponto).
 - `data/gastos.json`: Orçamento federal do ano.
 - `data/tributos.json`: lista dos principais tributos.
 - `data/glossario.json`: termos difíceis. No texto, `[[Termo]]` ou `[[Termo|texto]]` vira um botão com a explicação.
