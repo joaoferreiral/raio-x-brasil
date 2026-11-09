@@ -138,13 +138,15 @@
       "data": "2023-12-20",
       "titulo": "Criado o Imposto Seletivo, o “imposto do pecado”",
       "tipo": "criou",
-      "resumo": "Novo imposto sobre produtos que fazem mal à saúde ou ao meio ambiente, como cigarro, bebida alcoólica e refrigerante. Faz parte da reforma tributária. Começa em 2027 e as alíquotas ainda dependem de lei.",
+      "resumo": "Novo imposto sobre produtos que fazem mal à saúde ou ao meio ambiente, como cigarro, bebida alcoólica e refrigerante. Faz parte da reforma tributária. Em 04/11/2026, a MP 1.399/2026 definiu as alíquotas para 2027, com base nas alíquotas atuais do IPI. A cobrança começa em 02/02/2027. Para 2028, o governo deve enviar um projeto de lei ao Congresso até 31/05/2027.",
       "quemSente": "Quem consome esses produtos",
       "status": "em-transicao",
-      "statusTexto": "Previsto para 2027. Alíquotas ainda não definidas.",
-      "instrumento": "EC 132/2023 e LC 214/2025",
+      "statusTexto": "Alíquotas de 2027 definidas por MP, que ainda precisa ser votada pelo Congresso. Cobrança prevista a partir de 02/02/2027.",
+      "instrumento": "EC 132/2023, LC 214/2025 e MP 1.399/2026",
       "fontes": [
-        { "nome": "EC 132/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm", "oficial": true }
+        { "nome": "EC 132/2023 (Planalto)", "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm", "oficial": true },
+        { "nome": "Planalto: Lula assina MP com as alíquotas para 2027", "url": "https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/noticias/2026/11/presidente-lula-assina-mp-que-define-aliquotas-do-imposto-seletivo-para-2027", "oficial": true },
+        { "nome": "Agência Brasil: governo publica MP das alíquotas", "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/governo-publica-mp-das-aliquotas-do-imposto-seletivo-para-2027", "oficial": true }
       ]
     },
     {
