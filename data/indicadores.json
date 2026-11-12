@@ -1,13 +1,13 @@
 {
-  "atualizadoEm": "2026-11-11T15:59:29.451Z",
+  "atualizadoEm": "2026-11-12T16:42:52.597Z",
   "itens": [
     {
       "id": "ipca12m",
       "nome": "Inflação em 12 meses",
       "unidade": "%",
       "casas": 2,
-      "valor": 4.58,
-      "referencia": "set/2026",
+      "valor": 4.63,
+      "referencia": "out/2026",
       "valorAntes": 5.79,
       "referenciaAntes": "dez/2022",
       "melhorQuando": "menor",
@@ -20,7 +20,7 @@
         "tipo": "sgs",
         "serie": 13522
       },
-      "verificadoEm": "11/11/2026",
+      "verificadoEm": "12/11/2026",
       "naoMostra": [
         {
           "texto": "Inflação menor não quer dizer preços menores. Quer dizer que os preços sobem mais devagar. O que subiu antes continua mais caro."
@@ -40,7 +40,7 @@
       "unidade": "% ao ano",
       "casas": 2,
       "valor": 13.75,
-      "referencia": "11/11/2026",
+      "referencia": "12/11/2026",
       "valorAntes": 13.75,
       "referenciaAntes": "31/12/2022",
       "melhorQuando": "neutro",
@@ -53,7 +53,7 @@
         "tipo": "sgs",
         "serie": 432
       },
-      "verificadoEm": "11/11/2026",
+      "verificadoEm": "12/11/2026",
       "naoMostra": [
         {
           "texto": "A Selic é decidida pelo [[Copom]], do Banco Central, e não pelo presidente da República. Desde 2021 o Banco Central tem autonomia definida em lei.",
@@ -85,7 +85,7 @@
       "auto": {
         "tipo": "sidra-desemprego"
       },
-      "verificadoEm": "11/11/2026",
+      "verificadoEm": "12/11/2026",
       "naoMostra": [
         {
           "texto": "A taxa só conta quem está procurando emprego. Quem desistiu de procurar, o [[Desalentado]], fica de fora. Eles eram 3,6% das pessoas que trabalham, procuram ou desistiram de procurar no fim de 2022, e 2,2% em jul-set/2026.",
@@ -201,7 +201,7 @@
           "texto": "PIB maior não quer dizer renda maior para todo mundo. Ele mostra o total produzido no país, não como esse dinheiro se divide."
         }
       ],
-      "verificadoEm": "11/11/2026"
+      "verificadoEm": "12/11/2026"
     },
     {
       "id": "dbgg",
@@ -222,7 +222,7 @@
         "tipo": "sgs",
         "serie": 13762
       },
-      "verificadoEm": "11/11/2026",
+      "verificadoEm": "12/11/2026",
       "naoMostra": [
         {
           "texto": "A dívida sobe quando o governo gasta mais do que arrecada, mas também quando os juros estão altos, porque os [[Juros da dívida]] se somam a ela. E cai, em % do PIB, quando a economia cresce mais rápido.",
@@ -246,8 +246,8 @@
       "unidade": "R$",
       "casas": 2,
       "prefixo": true,
-      "valor": 5.584,
-      "referencia": "10/11/2026",
+      "valor": 5.6143,
+      "referencia": "12/11/2026",
       "valorAntes": 5.2177,
       "referenciaAntes": "30/12/2022",
       "melhorQuando": "neutro",
@@ -260,7 +260,7 @@
         "tipo": "sgs",
         "serie": 1
       },
-      "verificadoEm": "11/11/2026",
+      "verificadoEm": "12/11/2026",
       "naoMostra": [
         {
           "texto": "O dólar também sobe e desce por causa de coisas de fora do Brasil, como os juros nos Estados Unidos e a força do dólar no mundo.",
@@ -289,7 +289,7 @@
       "valorAntes": 1212,
       "referenciaAntes": "dez/2022",
       "melhorQuando": "maior",
-      "ganhoReal": 12.5,
+      "ganhoReal": 12.4,
       "explicacao": "Menor salário que pode ser pago por lei. Também serve de base para aposentadorias do INSS e outros benefícios. O que importa é o ganho acima da inflação (ganho real).",
       "fonte": {
         "nome": "Banco Central (SGS 1619)",
@@ -299,7 +299,7 @@
         "tipo": "sgs",
         "serie": 1619
       },
-      "verificadoEm": "11/11/2026",
+      "verificadoEm": "12/11/2026",
       "naoMostra": [
         {
           "texto": "Nenhuma aposentadoria do INSS pode ser menor que o salário mínimo. Por isso, cada aumento do mínimo também aumenta o gasto da Previdência.",
@@ -371,8 +371,8 @@
     }
   ],
   "inflacaoAcumuladaDesdeBase": {
-    "valor": 18.87,
-    "ate": "set/2026"
+    "valor": 19.04,
+    "ate": "out/2026"
   },
   "avisosColeta": []
 }
