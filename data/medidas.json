@@ -491,13 +491,15 @@
       "data": "2026-09-25",
       "titulo": "MP proíbe apostas esportivas e jogos online",
       "tipo": "regra",
-      "resumo": "Não é imposto, mas mexe com a arrecadação: uma [[Medida Provisória]] proibiu a oferta e a propaganda de bets no país. As empresas recorreram ao STF. O Congresso tem até 23/11/2026 para votar.",
+      "resumo": "Não é imposto, mas mexe com a arrecadação: uma [[Medida Provisória]] proibiu a oferta e a propaganda de bets no país. As empresas recorreram ao STF. O Congresso prorrogou a validade da MP por 60 dias e tem até 4 de março de 2027 para votar. Se não votar, ela perde a validade.",
       "quemSente": "Empresas de apostas e apostadores",
       "status": "vigente",
       "statusTexto": "Em vigor provisoriamente. Pendente de votação e de decisão do STF.",
       "instrumento": "MP 1.394/2026",
       "fontes": [
-        { "nome": "Senado: resumo da MPV 1394", "url": "https://www12.senado.leg.br/publicacoes/estudos-legislativos/tipos-de-estudos/sumarios-de-proposicoes/mpv1394", "oficial": true }
+        { "nome": "Senado: resumo da MPV 1394", "url": "https://www12.senado.leg.br/publicacoes/estudos-legislativos/tipos-de-estudos/sumarios-de-proposicoes/mpv1394", "oficial": true },
+        { "nome": "Agência Brasil: Congresso prorroga por 60 dias MP que proíbe bets (via Diario de Pernambuco, 11/11/2026)", "url": "https://www.diariodepernambuco.com.br/economia/2026/11/11728891-congresso-prorroga-por-60-dias-mp-que-proibe-bets-no-pais.html", "oficial": false },
+        { "nome": "Correio da Manhã: MP perde a validade em 4 de março se não for votada", "url": "https://www.correiodamanha.com.br/politica/2026/11/amp/333794-fux-suspende-acoes-contra-o-fim-das-bets-ate-o-julgamento.html", "oficial": false }
       ]
     }
   ]
