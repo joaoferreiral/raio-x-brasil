@@ -1,6 +1,6 @@
 {
-  "atualizadoEm": "2026-11-04",
-  "intro": "Decisões que não são imposto, mas mexem no seu bolso (combustível, energia, tarifas), e previsões de bancos e instituições sobre a economia. Para cada uma mostramos quem ganha e quem perde, ou o que outras fontes dizem. Previsão não é fato: é a opinião de quem assina.",
+  "atualizadoEm": "2026-11-17",
+  "intro": "Decisões que não são imposto, mas mexem no seu bolso (combustível, energia, tarifas, cortes no Orçamento), e previsões de bancos e instituições sobre a economia. Para cada uma mostramos quem ganha e quem perde, ou o que outras fontes dizem. Previsão não é fato: é a opinião de quem assina.",
   "itens": [
     {
       "id": "gasolina-e30",
@@ -13,8 +13,14 @@
       "quemPerde": "Etanol rende menos energia que gasolina, então o carro pode rodar um pouco menos por litro, principalmente os que não são flex.",
       "instrumento": "Resolução do CNPE, com base na Lei 14.993/2024 (Combustível do Futuro)",
       "fontes": [
-        { "nome": "Exame: CNPE aprova mistura de 30%", "url": "https://exame.com/agro/cnpe-aprova-mistura-do-etanol-na-gasolina-de-27-para-30-e-preco-do-combustivel-pode-cair" },
-        { "nome": "eixos: governo oficializa E30 e B15", "url": "https://eixos.com.br/combustiveis-e-bioenergia/biocombustiveis/governo-oficializa-aumento-do-etanol-na-gasolina-e-b15-a-partir-de-1o-de-agosto/" }
+        {
+          "nome": "Exame: CNPE aprova mistura de 30%",
+          "url": "https://exame.com/agro/cnpe-aprova-mistura-do-etanol-na-gasolina-de-27-para-30-e-preco-do-combustivel-pode-cair"
+        },
+        {
+          "nome": "eixos: governo oficializa E30 e B15",
+          "url": "https://eixos.com.br/combustiveis-e-bioenergia/biocombustiveis/governo-oficializa-aumento-do-etanol-na-gasolina-e-b15-a-partir-de-1o-de-agosto/"
+        }
       ]
     },
     {
@@ -27,8 +33,14 @@
       "quem": "Fundo Monetário Internacional (FMI)",
       "contraponto": "A conta do FMI inclui títulos do Tesouro que estão com o Banco Central, que a conta oficial brasileira não inclui. Pela conta oficial, a dívida estava em 82,9% do PIB em set/2026. O próprio governo, na proposta de diretrizes do Orçamento de 2027 (PLDO), prevê 86% em 2027 e pico de 87,8% em 2029.",
       "fontes": [
-        { "nome": "Exame: dívida pode chegar a 100% do PIB em 2027, diz FMI", "url": "https://exame.com/economia/divida-do-brasil-pode-chegar-a-100-do-pib-em-2027-diz-fmi/" },
-        { "nome": "Times Brasil: governo projeta dívida em 86% do PIB para 2027", "url": "https://timesbrasil.com.br/brasil/governo-projeta-divida-bruta-em-86-do-pib-para-2027/" }
+        {
+          "nome": "Exame: dívida pode chegar a 100% do PIB em 2027, diz FMI",
+          "url": "https://exame.com/economia/divida-do-brasil-pode-chegar-a-100-do-pib-em-2027-diz-fmi/"
+        },
+        {
+          "nome": "Times Brasil: governo projeta dívida em 86% do PIB para 2027",
+          "url": "https://timesbrasil.com.br/brasil/governo-projeta-divida-bruta-em-86-do-pib-para-2027/"
+        }
       ]
     },
     {
@@ -41,7 +53,10 @@
       "quem": "UBS Global Wealth Management (banco suíço)",
       "contraponto": "É a visão mais pessimista entre os grandes bancos. O JPMorgan, por exemplo, prevê crescimento baixo em 2027, perto de 1%, e dívida perto de 85% do PIB, sem falar em crise. O governo prevê 86% em 2027 (PLDO).",
       "fontes": [
-        { "nome": "InfoMoney: Brasil caminha para crise em 2027 sem reforma, alerta UBS", "url": "https://www.infomoney.com.br/economia/crise-fiscal-2027-divida-pib-ubs/" }
+        {
+          "nome": "InfoMoney: Brasil caminha para crise em 2027 sem reforma, alerta UBS",
+          "url": "https://www.infomoney.com.br/economia/crise-fiscal-2027-divida-pib-ubs/"
+        }
       ]
     },
     {
@@ -54,8 +69,105 @@
       "quem": "JPMorgan (banco americano)",
       "contraponto": "Em 2025 a economia cresceu 2,3% pelo IBGE. Previsões de crescimento mudam bastante ao longo do ano. O Banco Central publica toda semana a média das previsões do mercado no Boletim Focus.",
       "fontes": [
-        { "nome": "Times Brasil: cenário fiscal será determinante em 2027, diz JPMorgan", "url": "https://timesbrasil.com.br/brasil/cenario-fiscal-sera-determinante-para-economia-brasileira-em-2027-diz-jpmorgan/" },
-        { "nome": "Banco Central: Boletim Focus", "url": "https://www.bcb.gov.br/publicacoes/focus" }
+        {
+          "nome": "Times Brasil: cenário fiscal será determinante em 2027, diz JPMorgan",
+          "url": "https://timesbrasil.com.br/brasil/cenario-fiscal-sera-determinante-para-economia-brasileira-em-2027-diz-jpmorgan/"
+        },
+        {
+          "nome": "Banco Central: Boletim Focus",
+          "url": "https://www.bcb.gov.br/publicacoes/focus"
+        }
+      ]
+    },
+    {
+      "id": "saude-bloqueio-2024",
+      "data": "2024-07-30",
+      "tipo": "decisao",
+      "area": "Saúde",
+      "titulo": "Saúde tem R$ 4,4 bilhões congelados, a maior fatia do corte de 2024",
+      "resumo": "Para cumprir as regras das contas públicas, o governo congelou R$ 15 bilhões do Orçamento de 2024. O Ministério da Saúde foi o mais atingido: R$ 4,4 bilhões de uma verba de R$ 47 bilhões que ele pode gastar livremente. Desse valor, R$ 3,42 bilhões foram [[Bloqueio de gastos|bloqueio]] e R$ 998 milhões, [[Contingenciamento|contingenciamento]]. Cada ministério escolhe onde cortar: na Saúde, o Farmácia Popular perdeu R$ 1,7 bilhão e a construção de unidades de atendimento especializado, R$ 578,8 milhões. O dinheiro pode ser liberado mais tarde se as contas melhorarem.",
+      "quemGanha": "Ninguém ganha diretamente. O governo segura o gasto para cumprir as regras do [[Arcabouço fiscal|arcabouço fiscal]]: o limite de crescimento das despesas e a meta de [[Resultado primário|resultado primário]].",
+      "quemPerde": "Programas da Saúde que dependem da parte livre do Orçamento, como o Farmácia Popular e obras de unidades de atendimento. O congelamento não atinge salários nem os repasses obrigatórios ao SUS.",
+      "instrumento": "Decreto 12.120/2024 (programação orçamentária)",
+      "fontes": [
+        {
+          "nome": "Agência Brasil: Ministério da Saúde tem congelados R$ 4,4 bilhões",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2024-07/ministerio-da-saude-tem-congelados-r-44-bilhoes-do-orcamento",
+          "oficial": true
+        },
+        {
+          "nome": "CNN Brasil: Saúde terá maior corte, de R$ 4,4 bi",
+          "url": "https://www.cnnbrasil.com.br/economia/macroeconomia/governo-detalha-contencao-de-gastos-ministerio-da-saude-tera-maior-corte-de-r-44-bi/"
+        },
+        {
+          "nome": "Exame: governo bloqueia R$ 1,7 bi do Farmácia Popular",
+          "url": "https://exame.com/economia/governo-bloqueia-r-17-bi-do-farmacia-popular-e-r-580-milhoes-do-auxilio-gas/"
+        },
+        {
+          "nome": "InfoMoney: bloqueio inclui Farmácia Popular, Auxílio-Gás e Pé de Meia",
+          "url": "https://www.infomoney.com.br/politica/bloqueio-de-gastos-inclui-r-28-bi-de-farmacia-popular-auxilio-gas-e-pe-de-meia/"
+        }
+      ]
+    },
+    {
+      "id": "saude-bloqueio-2025",
+      "data": "2025-05-30",
+      "tipo": "decisao",
+      "area": "Saúde",
+      "titulo": "Saúde perde R$ 2,4 bilhões no congelamento de R$ 31,3 bilhões de 2025",
+      "resumo": "O governo congelou R$ 31,3 bilhões do Orçamento de 2025: R$ 10,6 bilhões de [[Bloqueio de gastos|bloqueio]] e R$ 20,7 bilhões de [[Contingenciamento|contingenciamento]]. A Saúde ficou entre os três ministérios mais atingidos, com R$ 2,37 bilhões congelados da sua verba livre (R$ 1,81 bilhão contingenciado e R$ 553 milhões bloqueados). Somando as emendas de deputados e senadores destinadas à Saúde que também foram congeladas, o valor chega a R$ 5,9 bilhões, segundo a Gazeta do Povo. A Educação ficou de fora do contingenciamento.",
+      "quemGanha": "Ninguém ganha diretamente. O governo segura o gasto para cumprir as regras do [[Arcabouço fiscal|arcabouço fiscal]]: o limite de crescimento das despesas e a meta de [[Resultado primário|resultado primário]].",
+      "quemPerde": "Ações da Saúde pagas com a parte livre do Orçamento e com emendas parlamentares. O congelamento não atinge salários nem os repasses obrigatórios ao SUS.",
+      "instrumento": "Decreto de programação orçamentária de 30/05/2025",
+      "fontes": [
+        {
+          "nome": "Agência Brasil: Educação e BC são preservados de cortes",
+          "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2025-05/educacao-e-bc-sao-preservados-de-cortes-no-orcamento",
+          "oficial": true
+        },
+        {
+          "nome": "InfoMoney: decreto com contenção de R$ 31,3 bi",
+          "url": "https://www.infomoney.com.br/politica/governo-publica-decreto-com-contencao-de-r-313-bi-pac-e-emendas-sao-mais-afetados/"
+        },
+        {
+          "nome": "Gazeta do Povo: Saúde, Cidades e Defesa são os mais atingidos",
+          "url": "https://www.gazetadopovo.com.br/economia/saude-cidades-e-defesa-sao-os-mais-atingidos-por-bloqueio-no-orcamento/"
+        }
+      ]
+    },
+    {
+      "id": "saude-bloqueio-2026",
+      "data": "2026-05-29",
+      "tipo": "decisao",
+      "area": "Saúde",
+      "titulo": "Saúde tem R$ 1 bilhão bloqueado no Orçamento de 2026",
+      "resumo": "Em maio, o governo ampliou o [[Bloqueio de gastos|bloqueio]] do Orçamento de 2026 para R$ 23,7 bilhões, porque os gastos obrigatórios (como aposentadorias) cresceram mais que o previsto. A Saúde teve R$ 1 bilhão bloqueado, a quinta maior fatia, atrás de Defesa (R$ 4,4 bilhões), Cidades (R$ 3,3 bilhões), Educação (R$ 1,6 bilhão) e Fazenda (R$ 1,4 bilhão). Em julho, o governo liberou R$ 5,7 bilhões para outros ministérios, mas o bloqueio da Saúde continuou em R$ 1 bilhão. Antes disso, em fevereiro, a verba livre da Saúde já tinha sido reduzida em R$ 953 milhões, que foram para outras áreas.",
+      "quemGanha": "Ninguém ganha diretamente. O governo segura o gasto para cumprir as regras do [[Arcabouço fiscal|arcabouço fiscal]]: o limite de crescimento das despesas e a meta de [[Resultado primário|resultado primário]].",
+      "quemPerde": "Compras, contratos e obras da Saúde pagos com a parte livre do Orçamento. O governo diz que é um ajuste temporário e que serviços e benefícios não serão afetados. O bloqueio não atinge salários nem os repasses obrigatórios ao SUS.",
+      "instrumento": "Decreto de programação orçamentária de 29/05/2026, atualizado em 30/07/2026",
+      "fontes": [
+        {
+          "nome": "Ministério do Planejamento: decreto detalha redução do bloqueio (jul/2026)",
+          "url": "https://www.gov.br/planejamento/pt-br/assuntos/noticias/2026/julho/publicado-decreto-de-programacao-que-detalha-reducao-de-r-5-741-bilhoes-em-bloqueio-de-despesas",
+          "oficial": true
+        },
+        {
+          "nome": "CNN Brasil: governo detalha bloqueio no Orçamento",
+          "url": "https://www.cnnbrasil.com.br/economia/macroeconomia/governo-detalha-bloqueio-no-orcamento-r-49-bi-em-emendas-sao-barrados/"
+        },
+        {
+          "nome": "InfoMoney: Defesa e Cidades lideram bloqueios de 2026",
+          "url": "https://www.infomoney.com.br/politica/defesa-e-cidades-lideram-bloqueios-no-orcamento-de-2026-veja-areas-preservadas/"
+        },
+        {
+          "nome": "Agência Brasil: bloqueio não afetará serviços, diz Moretti",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-06/bloqueio-de-r-237-bi-nao-afetara-servicos-e-beneficios-diz-moretti",
+          "oficial": true
+        },
+        {
+          "nome": "Revista Cenarium: Saúde perde R$ 953 milhões em fevereiro",
+          "url": "https://revistacenarium.com.br/governo-federal-corta-r-953-milhoes-da-saude-e-redistribui-orcamento-de-2026/"
+        }
       ]
     }
   ]

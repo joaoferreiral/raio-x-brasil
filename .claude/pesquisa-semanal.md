@@ -12,6 +12,7 @@ Use WebSearch e WebFetch para procurar, no Brasil, notícias e atos publicados n
 - Votações no Congresso ou decisões do STF sobre medidas que **já estão** em `data/medidas.json` (mudança de status: aprovada, derrubada, caducou, suspensa, sancionada).
 - Reforma tributária: alíquotas da CBS, do IBS e do Imposto Seletivo, cronograma, regulamentações.
 - Decisões do governo, do Congresso ou de agências que **não são imposto** mas mexem no bolso: mistura de combustíveis, preço de energia e bandeira tarifária, tarifas reguladas, regras de crédito, benefícios sociais. Vão para `data/decisoes.json` com `tipo: "decisao"`.
+- Cortes, bloqueios, contingenciamentos e desbloqueios no Orçamento federal (decretos de programação orçamentária, que saem a cada dois meses depois dos relatórios bimestrais), principalmente em Saúde, Educação e programas sociais (Farmácia Popular, Bolsa Família, Pé-de-Meia etc.). Vão para `data/decisoes.json` com `tipo: "decisao"` e `area` do ministério. Diga quanto foi congelado, de quanto era a verba, o que é bloqueio e o que é contingenciamento, e se depois houve liberação (acrescente na decisão existente, sem apagar).
 - Previsões de peso sobre a economia brasileira (FMI, Banco Central, Tesouro, IFI, grandes bancos): dívida, PIB, inflação, juros, crise. Vão para `data/decisoes.json` com `tipo: "projecao"`.
 - Novos dados oficiais anuais: carga tributária (Tesouro), resultado primário do ano (Tesouro), Orçamento do próximo ano sancionado (LOA).
 

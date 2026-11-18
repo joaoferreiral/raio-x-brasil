@@ -196,6 +196,17 @@
     {
       "termo": "Taxa de participação",
       "definicao": "A parte da população com 14 anos ou mais que está trabalhando ou procurando trabalho. Se ela cai, menos gente está no mercado de trabalho."
+    },
+    {
+      "termo": "Bloqueio de gastos",
+      "aliases": [
+        "Bloqueio"
+      ],
+      "definicao": "Quando o governo trava parte do dinheiro de um ministério porque os gastos obrigatórios (como aposentadorias) cresceram e a soma passaria do limite do arcabouço fiscal. Pode ser liberado depois, se sobrar espaço."
+    },
+    {
+      "termo": "Contingenciamento",
+      "definicao": "Quando o governo segura parte do Orçamento porque está arrecadando menos que o previsto e pode não cumprir a meta das contas. É temporário: o dinheiro volta se a arrecadação melhorar."
     }
   ]
 }
