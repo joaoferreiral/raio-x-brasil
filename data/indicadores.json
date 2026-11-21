@@ -1,5 +1,5 @@
 {
-  "atualizadoEm": "2026-11-20T16:52:26.790Z",
+  "atualizadoEm": "2026-11-21T16:01:09.468Z",
   "itens": [
     {
       "id": "ipca12m",
@@ -20,7 +20,7 @@
         "tipo": "sgs",
         "serie": 13522
       },
-      "verificadoEm": "20/11/2026",
+      "verificadoEm": "21/11/2026",
       "naoMostra": [
         {
           "texto": "Inflação menor não quer dizer preços menores. Quer dizer que os preços sobem mais devagar. O que subiu antes continua mais caro."
@@ -85,7 +85,7 @@
       "auto": {
         "tipo": "sidra-desemprego"
       },
-      "verificadoEm": "20/11/2026",
+      "verificadoEm": "21/11/2026",
       "naoMostra": [
         {
           "texto": "A taxa só conta quem está procurando emprego. Quem desistiu de procurar, o [[Desalentado]], fica de fora. Eles eram 3,6% das pessoas que trabalham, procuram ou desistiram de procurar no fim de 2022, e 2,2% em jul-set/2026.",
@@ -201,7 +201,7 @@
           "texto": "PIB maior não quer dizer renda maior para todo mundo. Ele mostra o total produzido no país, não como esse dinheiro se divide."
         }
       ],
-      "verificadoEm": "20/11/2026"
+      "verificadoEm": "21/11/2026"
     },
     {
       "id": "dbgg",
@@ -222,7 +222,7 @@
         "tipo": "sgs",
         "serie": 13762
       },
-      "verificadoEm": "20/11/2026",
+      "verificadoEm": "21/11/2026",
       "naoMostra": [
         {
           "texto": "A dívida sobe quando o governo gasta mais do que arrecada, mas também quando os juros estão altos, porque os [[Juros da dívida]] se somam a ela. E cai, em % do PIB, quando a economia cresce mais rápido.",
@@ -299,7 +299,7 @@
         "tipo": "sgs",
         "serie": 1619
       },
-      "verificadoEm": "20/11/2026",
+      "verificadoEm": "21/11/2026",
       "naoMostra": [
         {
           "texto": "Nenhuma aposentadoria do INSS pode ser menor que o salário mínimo. Por isso, cada aumento do mínimo também aumenta o gasto da Previdência.",
@@ -374,5 +374,8 @@
     "valor": 19.04,
     "ate": "out/2026"
   },
-  "avisosColeta": []
+  "avisosColeta": [
+    "selic: https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados/ultimos/1?formato=json -> HTTP 304",
+    "dolar: https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/1?formato=json -> HTTP 304"
+  ]
 }
